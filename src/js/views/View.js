@@ -2,6 +2,7 @@ export class View {
   _data;
   render(renderData = null, boolean = true) {
     this._data = renderData;
+    // if (!renderData) return;
     if (!boolean) return this._generateMarkup();
 
     if (!this.update(this._generateMarkup())) {

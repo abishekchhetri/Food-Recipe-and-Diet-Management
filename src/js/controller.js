@@ -9,6 +9,7 @@ import { bookmarksView } from './views/bookmarksView';
 import { addRecipeView } from './views/addRecipeView';
 import { ADD_RECIPE_EVENT_TIMEOUT } from './config';
 import { RECIPE_RENDER_TIMEOUT } from './config';
+import { toggleFields } from './views/toggleView';
 
 const showRecipe = async function () {
   try {
@@ -22,7 +23,6 @@ const showRecipe = async function () {
     recipeView.render(data.state.recipe);
     resultView.render(data.state.search.resultPerPage);
     // addRecipeView.render();
-    //now to render without reloading the screen
   } catch (err) {
     recipeView.renderError();
     console.log(err);
@@ -31,8 +31,6 @@ const showRecipe = async function () {
 
 const controlSearchResults = async function (query) {
   try {
-    console.log('hello search');
-
     await data.loadSearchResults(query);
     data.getSearchResultsPage(1);
     paginationView._resetCurr();
@@ -48,6 +46,7 @@ const controlPagination = function (pageNumber) {
   data.getSearchResultsPage(pageNumber);
   paginationView.render(data.state.search.resultArrayPerPage);
   resultView.render(data.state.search.resultPerPage);
+  //saving hash to # link preventing reload of page on clicking of new link
   window.history.pushState(null, '', window.location.hash);
 };
 
@@ -77,7 +76,6 @@ const controlAddRecipe = async function (formData) {
     await data.uploadRecipe(formData);
     addRecipeView.renderSuccess();
     recipeView.render(data.state.recipe);
-
     setTimeout(() => {
       addRecipeView._toggleShowHideUpload();
     }, ADD_RECIPE_EVENT_TIMEOUT);
@@ -100,6 +98,7 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerRender(controlBookmark);
-  // addRecipeView._addHandlerUpload(controlAddRecipe);
+  toggleFields.addHandlerToggle();
+  addRecipeView._addHandlerUpload(controlAddRecipe);
 };
 init();
