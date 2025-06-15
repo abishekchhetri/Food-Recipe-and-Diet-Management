@@ -1,0 +1,27 @@
+{
+  "name": "food-recipe-and-diet-management-webapp",
+  "version": "1.0.0",
+  "description": "This is capstone project that is made by advanced js, html/css and implements mvc architecture with npm packages, libraries and the best practices ",
+  "homepage": "https://github.com/abishekchhetri/Food-Recipe-and-Diet-Management#readme",
+  "bugs": {
+    "url": "https://github.com/abishekchhetri/Food-Recipe-and-Diet-Management/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abishekchhetri/Food-Recipe-and-Diet-Management.git"
+  },
+  "license": "ISC",
+  "author": "Avishek Chhetri",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "core-js": "^3.43.0",
+    "fraction.js": "^5.2.2"
+  }
+}

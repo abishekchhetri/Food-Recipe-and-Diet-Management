@@ -1,4 +1,4 @@
-import icons from 'url:../../img/icons.svg';
+
 import { View } from './View';
 import { Fraction } from 'fraction.js';
 class RecipeView extends View {

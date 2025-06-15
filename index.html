@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./src/js/controller.js"></script>
   </head>
   <body>
     <div class="container">
@@ -38,7 +39,11 @@
                   <li class="preview">
                     <a class="preview__link" href="#23456">
                       <figure class="preview__fig">
-                        <img src="#" alt="Test" />
+                        <img
+                          src="./css/image.png"
+                          class="preview__fig"
+                          alt="Test"
+                        />
                       </figure>
                       <div class="preview__data">
                         <h4 class="preview__name">
@@ -52,7 +57,29 @@
                   <li class="preview">
                     <a class="preview__link" href="#23456">
                       <figure class="preview__fig">
-                        <img src="#" alt="Test" />
+                        <img
+                          src="./css/image.png"
+                          class="preview__fig"
+                          alt="Test"
+                        />
+                      </figure>
+                      <div class="preview__data">
+                        <h4 class="preview__name">
+                          Pasta with Tomato Cream ...
+                        </h4>
+                        <p class="preview__publisher">The Pioneer Woman</p>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="preview">
+                    <a class="preview__link" href="#23456">
+                      <figure class="preview__fig">
+                        <img
+                          src="./css/image.png"
+                          class="preview__fig"
+                          alt="Test"
+                        />
                       </figure>
                       <div class="preview__data">
                         <h4 class="preview__name">
@@ -80,28 +107,7 @@
               <div class="preview__data">
                 <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
                 <p class="preview__publisher">The Pioneer Woman</p>
-                <div class="preview__user-generated hidden">
-                  <svg>
-                    <use href="src/img/icons.svg#icon-user"></use>
-                  </svg>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <li class="preview">
-            <a class="preview__link preview__link--active" href="#23456">
-              <figure class="preview__fig">
-                <img src="src/img/test-1.jpg" alt="Test" />
-              </figure>
-              <div class="preview__data">
-                <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
-                <p class="preview__publisher">The Pioneer Woman</p>
-                <div class="preview__user-generated hidden">
-                  <svg>
-                    <use href="src/img/icons.svg#icon-user"></use>
-                  </svg>
-                </div>
+                <div class="preview__user-generated hidden">UserGenerated</div>
               </div>
             </a>
           </li>

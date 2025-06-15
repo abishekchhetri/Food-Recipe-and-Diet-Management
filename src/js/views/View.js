@@ -1,4 +1,3 @@
-import icons from 'url:../../img/icons.svg';
 export class View {
   _data;
   render(renderData = null, boolean = true) {
