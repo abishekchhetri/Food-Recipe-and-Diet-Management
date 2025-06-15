@@ -21,7 +21,7 @@ const showRecipe = async function () {
     bookmarksView.render(data.state.bookmarks);
     recipeView.render(data.state.recipe);
     resultView.render(data.state.search.resultPerPage);
-    addRecipeView.render();
+    // addRecipeView.render();
     //now to render without reloading the screen
   } catch (err) {
     recipeView.renderError();
@@ -31,6 +31,8 @@ const showRecipe = async function () {
 
 const controlSearchResults = async function (query) {
   try {
+    console.log('hello search');
+
     await data.loadSearchResults(query);
     data.getSearchResultsPage(1);
     paginationView._resetCurr();
@@ -98,6 +100,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerRender(controlBookmark);
-  addRecipeView._addHandlerUpload(controlAddRecipe);
+  // addRecipeView._addHandlerUpload(controlAddRecipe);
 };
 init();

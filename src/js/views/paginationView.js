@@ -17,32 +17,20 @@ class PaginationView extends View {
       return '';
     } else if (this._curr === this.pages) {
       return ` <button class="btn--inline pagination__btn--prev">
-      <svg class="search__icon">
-      <use href="${icons}#icon-arrow-left"></use>
-      </svg>
       <span>Page ${this._curr - 1}</span>
     </button>`;
     }
     if (this._curr < this.pages && this._curr !== 1) {
       return ` <button class="btn--inline pagination__btn--prev">
-      <svg class="search__icon">
-      <use href="${icons}#icon-arrow-left"></use>
-      </svg>
       <span>Page ${this._curr - 1}</span>
     </button>
     <button class="btn--inline pagination__btn--next">
       <span>Page ${this._curr + 1}</span>
-      <svg class="search__icon">
-        <use href="${icons}#icon-arrow-right"></use>
-      </svg>
     </button> `;
     }
     if (this._curr === 1 && this.pages > this._curr) {
       return ` <button class="btn--inline pagination__btn--next">
       <span>Page ${this._curr + 1}</span>
-      <svg class="search__icon">
-        <use href="${icons}#icon-arrow-right"></use>
-      </svg>
     </button> `;
     }
   }

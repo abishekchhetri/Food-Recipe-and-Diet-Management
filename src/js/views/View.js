@@ -34,6 +34,7 @@ export class View {
       }
     });
   }
+
   clear() {
     this._parentEl.innerHTML = '';
   }
@@ -46,9 +47,6 @@ export class View {
   renderError() {
     const html = ` <div class="error">
     <div>
-      <svg>
-        <use href="${icons}#icon-alert-triangle"></use>
-      </svg>
     </div>
     <p>${this._errorMessage}</p>
   </div> `;
@@ -59,9 +57,6 @@ export class View {
     const html = `<div class="recipe">
     <div class="message">
       <div>
-        <svg>
-          <use href="${icons}#icon-smile"></use>
-        </svg>
       </div>
       <p>${this._successMessage}</p> 
     </div>
@@ -71,9 +66,6 @@ export class View {
 
   renderSpinner() {
     const html = `<div class="spinner">
-    <svg>
-      <use href="${icons}#icon-loader"></use>
-    </svg>
   </div> `;
     this.renderComponent(html);
   }
