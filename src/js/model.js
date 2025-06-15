@@ -1,0 +1,202 @@
+import { AJAX } from './helper';
+import { API_KEY, RESULT_PER_PAGE } from './config';
+import { saveBookmarkLocalStorage } from './helper';
+import { ingredientsRight } from './helper';
+import { validateUploadRecipe } from './helper';
+
+export const state = {
+  recipe: {},
+  search: {
+    query: [],
+    results: [],
+    resultPerPage: [],
+    resultArrayPerPage: [],
+  },
+  bookmarks: [],
+};
+
+export const loadRecipe = async function (hash) {
+  try {
+    const response = await AJAX(
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${hash}?key=${API_KEY}`
+    );
+    const { recipe } = response.data;
+    state.recipe = createRecipeObject(recipe);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+/**
+ * @param {Object} data- this parameter will supply us with data of recipe
+ * @return {Object}
+ */
+
+export const createRecipeObject = function (data) {
+  return {
+    cookingTime: data.cooking_time,
+    id: data.id,
+    imageUrl: data.image_url,
+    ingredients: data.ingredients,
+    publisher: data.publisher,
+    servings: data.servings,
+    sourceUrl: data.source_url,
+    title: data.title,
+    key: data.key,
+  };
+};
+
+export const loadSearchResults = async function (query) {
+  try {
+    const searchData = await AJAX(
+      `https://forkify-api.herokuapp.com/api/v2/recipes?search=${query}&key=${API_KEY}`
+    );
+    const data = searchData.data.recipes;
+    state.search.results = data.map(val => {
+      return {
+        id: val.id,
+        imageUrl: val.image_url,
+        publisher: val.publisher,
+        title: val.title,
+        key: val.key,
+      };
+    });
+
+    if (!state.search.results[0]) throw new Error('No result found');
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+/**
+ *
+ *
+ * @param {String|Number} page - this is page number supplied by controller
+ */
+export const getSearchResultsPage = async function (page) {
+  let result = state.search.results.length;
+  const pages = Math.trunc(result / RESULT_PER_PAGE);
+  const arr = Array.from({ length: pages }, val => RESULT_PER_PAGE);
+  const rem = result % RESULT_PER_PAGE;
+  if (result % RESULT_PER_PAGE != 0) arr.push(rem);
+  const pagInfo = arr.map((val, idx) => {
+    const start = idx * RESULT_PER_PAGE;
+    return [start, start + val];
+  });
+  page--;
+  state.search.resultArrayPerPage = pagInfo;
+  state.search.resultPerPage = state.search.results.slice(
+    pagInfo[page][0],
+    pagInfo[page][1]
+  );
+};
+
+export const updateServings = async function (newServings) {
+  const prevServing = state.recipe.servings;
+  if (newServings <= 0) {
+    state.recipe.servings = 1;
+    return;
+  }
+  state.recipe.servings = newServings;
+  state.recipe.ingredients.forEach(
+    val => (val.quantity = (val.quantity / prevServing) * state.recipe.servings)
+  );
+};
+
+//----------------->BOOKMARK DATA SECTION
+
+export const hasBookmark = bookmarkID =>
+  state.bookmarks.findIndex(val => val.id == bookmarkID) >= 0 ? true : false;
+
+/**
+ *
+ *
+ * @param {String|Object[]} recipeId - it accepts string
+ * @param {boolean} [renderIcon=false] - it does two thing basically like if render icon is false it will only render bookmark
+ * @return {void}
+ */
+export const saveOrRenderBookmarkStatus = function (
+  recipeId,
+  renderIcon = false
+) {
+  //this is for rendering when recipe loads
+  if (renderIcon) {
+    hasBookmark(recipeId)
+      ? (state.recipe.bookmark = true)
+      : (state.recipe.bookmark = false);
+    return;
+  }
+  state.recipe.bookmark = true;
+  const { id, imageUrl, publisher, title, key } = state.recipe;
+  state.bookmarks.push({
+    id,
+    imageUrl,
+    publisher,
+    title,
+    key,
+  });
+  saveBookmarkLocalStorage(state.bookmarks); //from helper
+};
+
+export const deleteBookmark = function (recipeId) {
+  state.recipe.bookmark = false;
+  const bookmarkDeleteKey = state.bookmarks.findIndex(
+    val => val.id === recipeId
+  );
+  state.bookmarks.splice(bookmarkDeleteKey, 1);
+  saveBookmarkLocalStorage(state.bookmarks); //from helper
+};
+
+//----------------->RECIPE UPLOAD SECTION
+export const uploadRecipe = async function (recipeObject) {
+  const arr = [];
+  let {
+    cookingTime: cooking_time,
+    image: image_url,
+    publisher,
+    servings,
+    sourceUrl: source_url,
+    title,
+    ...ingredients
+  } = recipeObject;
+
+  for (let [_, idx] of Object.entries(ingredients)) {
+    let [quantity, unit, description] = idx.split(',');
+    if (ingredientsRight(quantity, unit, description))
+      arr.push({
+        quantity: +quantity,
+        unit,
+        description,
+      });
+  }
+  ingredients = arr;
+  const recipe = {
+    cooking_time: +cooking_time,
+    image_url: image_url.trim(),
+    publisher: publisher.trim(),
+    servings: +servings,
+    source_url: source_url.trim(),
+    title: title.trim(),
+    ingredients,
+  };
+
+  try {
+    if (!validateUploadRecipe(recipe)) throw new Error('bad recipe!');
+    const recipeData = await AJAX(
+      `https://forkify-api.herokuapp.com/api/v2/recipes?key=${API_KEY}`,
+      recipe
+    );
+    const {
+      data: { recipe: userRecipe },
+    } = recipeData;
+    state.recipe = userRecipe;
+  } catch (err) {
+    throw err;
+  }
+};
+
+const init = function () {
+  const storage = JSON.parse(localStorage.getItem('ForkifyRecipeBookmarks'));
+  if (storage) state.bookmarks = storage;
+};
+init();
