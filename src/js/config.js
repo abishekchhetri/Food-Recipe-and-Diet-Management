@@ -3,6 +3,5 @@ export const RESULT_PER_PAGE = 10;
 export const FETCH_ERROR_TIMEOUT = 3; //if server dont give data in this second it will rollback
 export const FETCH_TIMEOUT_TIMER_SECONDS = 1000; //timer milliseconds
 export const ADD_RECIPE_EVENT_TIMEOUT = 800; //if error or success occurs in adding recipe we get message
-export const RECIPE_RENDER_TIMEOUT = 1500;
-
+export const RECIPE_RENDER_TIMEOUT = 3000;
 //additional api keys cf1fc6f1-937d-4ec5-a5be-c492e823fb56

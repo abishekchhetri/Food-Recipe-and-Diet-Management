@@ -75,18 +75,23 @@ const controlAddRecipe = async function (formData) {
     addRecipeView.renderSpinner();
     await data.uploadRecipe(formData);
     addRecipeView.renderSuccess();
-    recipeView.render(data.state.recipe);
     setTimeout(() => {
       addRecipeView._toggleShowHideUpload();
+      console.log(data.state.recipe.id);
+
+      window.location.hash = data.state.recipe.id;
     }, ADD_RECIPE_EVENT_TIMEOUT);
+
     setTimeout(() => {
       addRecipeView.render();
+      //bug fixing that image wont show after successful upload
+      recipeView.render(data.state.recipe);
     }, RECIPE_RENDER_TIMEOUT);
   } catch (err) {
     console.log(err);
     setTimeout(() => {
       addRecipeView.render();
-    }, ADD_RECIPE_TIMEOUT);
+    }, ADD_RECIPE_EVENT_TIMEOUT);
     addRecipeView.renderError();
   }
 };

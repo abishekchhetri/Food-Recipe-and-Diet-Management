@@ -14,18 +14,25 @@ class AddRecipeView extends View {
   _generateMarkup() {
     return ` <div class="upload__column">
     <h3 class="upload__heading">Recipe data</h3>
+
     <label>Title</label>
     <input value="Pani puri" required name="title" type="text" />
+
     <label>URL</label>
     <input value="https://www.google.com" required name="sourceUrl" type="text" />
+
     <label>Image URL</label>
     <input value="https://www.google.com" required name="image" type="text" />
+
     <label>Publisher</label>
     <input value="TEST" required name="publisher" type="text" />
+
     <label>Prep time</label>
     <input value="23" required name="cookingTime" type="number" />
+
     <label>Servings</label>
     <input value="23" required name="servings" type="number" />
+    
   </div>
 
   <div class="upload__column">

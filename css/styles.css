@@ -1,15 +1,41 @@
 /* ******************HEADER SECTION*************** */
+.first {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo_img {
+  width: 4rem;
+  height: 4rem;
+}
+.logo__text {
+  flex: 1;
+}
 .container {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  padding: 1rem;
+  /* background-color: rgb(87, 87, 178); */
+  max-width: 110rem;
+  margin: 0 auto;
+  /* max-width: 120rem;
+  margin: 0 auto; */
+}
+.header__logo__div {
+  width: 10rem;
+  height: 10rem;
+}
+.header__logo {
+  width: 100%;
+  height: 100%;
 }
 /* container 1 child */
 .header {
-  background-color: rgb(86, 149, 204);
+  background-color: var(--primary-color);
   padding: 0.5rem;
   grid-column: 1/-1;
+  height: 5rem;
 }
 
 .nav__list {
@@ -23,15 +49,12 @@
   flex: 1;
 }
 
-.message {
-  background-color: red;
-}
 .bookmarkTab {
+  background-color: var(--bookmark-color);
+  width: 22rem;
   position: absolute;
-  right: 0rem;
-  width: 21rem;
-  background-color: rgb(192, 134, 208);
-  padding: 1rem 1rem;
+  right: 0;
+  top: 5rem;
 }
 /* PREVIEW RESULT/BOOKMARK SECTION */
 .bookmarks__list {
@@ -42,6 +65,10 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
+  padding-top: 0.5rem;
+}
+.preview__link:hover {
+  background-color: var(--hover-color);
 }
 .preview__data {
   flex: 1;
@@ -61,12 +88,26 @@
 .nav {
   cursor: pointer;
 }
+.search__field {
+  padding: 0.5rem;
+  /* border-radius: 0.8rem; */
+  border: none;
+}
+
+.search__btn {
+  padding: 0.5rem;
+}
+
+.addRecipe:hover,
+.click__bookmark:hover {
+  color: var(--hover-color);
+}
+
 /* *********************SEARCH RESULTS SECTION**************** */
 .search-results {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  height: 100%;
   gap: 1rem;
   background-color: rgba(128, 128, 128, 0.372);
 }
@@ -79,18 +120,37 @@
   justify-content: space-between;
   /* flex: 1; */
 }
-.copyright {
-  /* flex: 1; */
-}
 
 /*******************RECIPE VIEW SECTION***********************/
+.recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.error,
+.message,
+.spinner {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 5rem auto;
+}
+.recipe__ingredient {
+  display: flex;
+  gap: 1rem;
+}
+.direction {
+  display: flex;
+  gap: 1rem;
+}
 .recipe__img {
   width: 100%;
-  background-size: cover;
   height: 30rem;
+  background-size: cover;
 }
 .recipe__fig {
-  height: fit-content;
+  height: 34rem;
   background-color: blueviolet;
 }
 .recipe__details {
@@ -108,17 +168,100 @@
 .recipe__directions {
   background-color: burlywood;
 }
-.overlay {
-  filter: blur(90%);
+.recipe__ingredient-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
 }
 
+.btn--tiny {
+  border-radius: 2rem;
+  border: none;
+  background-color: rgba(240, 248, 255, 0.018);
+}
+.btn--round {
+  border: none;
+  background-color: rgba(216, 191, 216, 0);
+}
+
+.recipe__info-buttons {
+  display: flex;
+  justify-content: space-around;
+}
 /* *****************ADD RECIPE WINDOW*************** */
 .add-recipe-window {
-  background-color: aliceblue;
+  z-index: 1111;
   position: absolute;
-  width: 70%;
+  /* max-width: 50rem; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: 2rem auto;
+  background: #f9f9f9;
   padding: 2rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.btn--close-modal {
+  float: right;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload__heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.upload label {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.upload input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.upload input:focus {
+  border-color: #007bff;
+  outline: none;
+  padding: 1rem;
+}
+
+.upload__btn {
+  grid-column: 2 / 3;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-self: start;
 }

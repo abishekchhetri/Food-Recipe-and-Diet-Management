@@ -189,6 +189,9 @@ export const uploadRecipe = async function (recipeObject) {
     const {
       data: { recipe: userRecipe },
     } = recipeData;
+
+    console.log(userRecipe);
+
     state.recipe = userRecipe;
   } catch (err) {
     throw err;

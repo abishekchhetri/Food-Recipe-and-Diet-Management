@@ -1,10 +1,14 @@
 import { View } from './View';
 import { Fraction } from 'fraction.js';
+import icons from 'url:../../../css/sprite.svg';
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error loading recipe!';
   _successMessage = 'Start by searching for recipe!';
 
+  // <svg>
+  //    <use href="${icons}#icon-eye"></use>
+  //  </svg>
   _generateMarkup() {
     return `
         <figure class="recipe__fig">
@@ -15,34 +19,51 @@ class RecipeView extends View {
         </figure>
 
         <div class="recipe__details">
+        
           <div class="recipe__info">
-            <span class="recipe__info-data recipe__info-data--minutes">${
+              <svg>
+             <use href="${icons}#icon-stopwatch"></use>
+               </svg>
+            <p class="recipe__info-data recipe__info-data--minutes">${
               this._data.cookingTime
-            }</span>
-            <span class="recipe__info-text">minutes</span>
+            } minutes</p>
+           
+
           </div>
 
           <div class="recipe__info">
-            <span class="recipe__info-data recipe__info-data--people">${
-              this._data.servings
-            }</span>
-            <span class="recipe__info-text">servings</span>
-
             <div class="recipe__info-buttons">
-              <button class="btn--tiny btn--decrease-servings">
-               reduce
-              </button>
               <button class="btn--tiny btn--increase-servings">
-               add
+               <svg class="svg__medium">
+            <use href="${icons}#icon-plus"></use>
+            </svg>
+              </button>
+              <span></span>
+              <button class="btn--tiny btn--decrease-servings">
+               <svg class="svg__medium">
+            <use href="${icons}#icon-minus"></use>
+            </svg>
               </button>
             </div>
+
+              <p class="recipe__info-data recipe__info-data--people">${
+                this._data.servings
+              } servings</p>
           </div>
 
           <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
-            UserGenerated
+                <svg>
+                <use href="${icons}#icon-user"></use>
+                </svg>
+
           </div>
+
           <button class="btn--round ${this._data.bookmark ? 'bookmarked' : ''}">
-          ${this._data.bookmark ? 'Bookmarked' : 'Bookmark?'}
+          <svg >
+          <use href="${icons}#${
+      this._data.bookmark ? 'icon-tag-fill' : 'icon-tag-stroke'
+    }"></use>
+          </svg>
           </button>
         </div>
 
@@ -64,27 +85,33 @@ class RecipeView extends View {
             }</span>. Please check out
             directions at their website.
           </p>
+          <button>
           <a
             class="btn--small recipe__btn"
             href=${this._data.sourceUrl}
             target="_blank"
           >
-            <span>Directions</span>
+          <div class="direction">
+            <p>Directions</p>
+            <svg>
+                <use href="${icons}#icon-global"></use>
+                </svg>
+          </div>
           </a>
+          </button>
         </div>`;
   }
   _generateMarkupIngredients(val) {
     return `<li class="recipe__ingredient">
-    <p>-> </p>
-    <div class="recipe__quantity">${
+    <svg class = "svg__small">
+       <use href="${icons}#icon-checkmark"></use>
+     </svg>
+
+    <p class="recipe__quantity">${
       val.quantity === 0 || val.quantity == null
         ? ''
         : new Fraction(val.quantity).toFraction(1)
-    }</div>
-    <div class="recipe__description">
-      <span class="recipe__unit">${val.unit}</span>
-      ${val.description}
-    </div>
+    } ${val.unit} ${val.description}</p>
   </li>
 `;
   }
