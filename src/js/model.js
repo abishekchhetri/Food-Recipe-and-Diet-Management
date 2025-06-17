@@ -13,6 +13,36 @@ export const state = {
     resultArrayPerPage: [],
   },
   bookmarks: [],
+  darkTheme: false,
+};
+
+export const themeData = {
+  lightData: [
+    [`--html-color`, `#fff9f3`],
+    [`--primary-color`, `#fff3e6`],
+    [`--secondary-color`, `#ffe8cc`],
+    [`--bookmark-color`, `#ffe0b2`],
+    [`--text-color`, `#3a2e2e`],
+    [`--body-color`, `#fff6ed`],
+    [`--svg-color`, `#5c4033`],
+    [`--hover-color`, `#ff944d`],
+    [`--button-color`, `#ff7f50`],
+    [`--box-shadow-color`, `rgba(0,0,0,0.07)`],
+    [`--transparent`, `rgba(255,243,228,0)`],
+  ],
+  darkData: [
+    [`--html-color`, `#2f3136`],
+    [`--primary-color`, `#2f3136`],
+    [`--secondary-color`, `#202225`],
+    [`--bookmark-color`, `#36393f`],
+    [`--text-color`, `#dcddde`],
+    [`--body-color`, `#2b2d31`],
+    [`--svg-color`, `#b9bbbe`],
+    [`--hover-color`, `#5865f2`],
+    [`--button-color`, `#3ba55d`],
+    [`--box-shadow-color`, `rgba(0,0,0,0.4)`],
+    [`--transparent`, `rgba(32,34,37,0)`],
+  ],
 };
 
 export const loadRecipe = async function (hash) {

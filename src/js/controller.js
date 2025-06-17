@@ -96,6 +96,19 @@ const controlAddRecipe = async function (formData) {
   }
 };
 
+const controlToggleTheme = function () {
+  if (data.state.darkTheme) {
+    data.state.darkTheme = false;
+    toggleFields.lightTheme(data.themeData.lightData);
+  } else {
+    data.state.darkTheme = true;
+    toggleFields.darkTheme(data.themeData.darkData);
+  }
+  //see view.js and know why ive done that
+  toggleFields.render(data.state.darkTheme, 'data');
+  toggleFields.render(data.state.darkTheme);
+};
+
 const init = function () {
   recipeView.addHandlerRender(showRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
@@ -104,6 +117,7 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerRender(controlBookmark);
   toggleFields.addHandlerToggle();
+  toggleFields.addHandlerToggleTheme(controlToggleTheme);
   addRecipeView._addHandlerUpload(controlAddRecipe);
 };
 init();

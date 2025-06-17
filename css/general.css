@@ -1,14 +1,18 @@
 :root {
-  /* light mode cofiguration */
-  --primary-color: rgb(255, 77, 0);
-  --secondary-color: orange;
-  --bookmark-color: rgba(224, 209, 209, 0.982);
-  --text-color: black;
-  --body-color: gray;
-  --box-color: white;
-  --svg-color: rgb(237, 81, 33);
-  --hover-color: rgb(165, 18, 18);
+  transition: background-color 1s ease, color 1s ease;
+  --html-color: #fff9f3;
+  --primary-color: #fff3e6;
+  --secondary-color: #ffe8cc;
+  --bookmark-color: #ffe0b2;
+  --text-color: #3a2e2e;
+  --body-color: #fff6ed;
+  --svg-color: #5c4033;
+  --hover-color: #ff944d;
+  --button-color: #ff7f50;
+  --box-shadow-color: rgba(0, 0, 0, 0.07);
+  --transparent: rgba(255, 243, 228, 0);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,18 +22,65 @@
 html {
   font-size: 62.5%;
   padding: 1rem 2rem;
+  font-family: Inter;
 }
+
+/* universal font format */
 p {
   font-size: 1.5rem;
+  color: var(--text-color);
 }
 a {
   font-size: 1rem;
   text-decoration: none;
 }
+h1,
+h2,
+h3 {
+}
+
+html {
+  background-color: var(--html-color);
+}
+/* universal button */
+button {
+  border: none;
+  background-color: var(--button-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover State */
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (Pressed) State */
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+/* Keyboard Focus (Accessibility) */
+button:focus-visible {
+  outline: 2px solid #ffffffaa;
+  outline-offset: 2px;
+}
+
 .grid-3-header {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  gap: 1rem;
   /* justify-items: start; */
 }
 .hidden {
@@ -49,7 +100,6 @@ a {
 
 svg {
   fill: var(--svg-color); /* fill color */
-  /* stroke: black; */
   stroke-width: 2px; /* stroke thickness */
   stroke-linejoin: round; /* rounded corners */
   /* opacity: 0.8; slightly transparent */
@@ -58,7 +108,9 @@ svg {
   width: 2rem;
   height: 2rem;
 }
-
+svg:hover {
+  fill: var(--hover-color);
+}
 .svg__small {
   width: 1rem;
   height: 1rem;

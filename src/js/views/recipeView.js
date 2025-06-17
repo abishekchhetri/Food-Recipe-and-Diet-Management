@@ -85,7 +85,7 @@ class RecipeView extends View {
             }</span>. Please check out
             directions at their website.
           </p>
-          <button>
+          <button class = "btn__direction">
           <a
             class="btn--small recipe__btn"
             href=${this._data.sourceUrl}

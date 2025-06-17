@@ -12,9 +12,16 @@
 .logo__text {
   flex: 1;
 }
+
+.hover__nav:hover {
+  color: var(--hover-color);
+}
 .container {
+  background-color: var(--body-color);
   position: relative;
   display: grid;
+  gap: 1rem;
+  padding: 1rem;
   grid-template-columns: 1fr 3fr;
   /* background-color: rgb(87, 87, 178); */
   max-width: 110rem;
@@ -42,11 +49,16 @@
   display: flex;
   flex-direction: row;
   list-style-type: none;
+  gap: 2rem;
 }
 
 .nav__item {
   justify-items: center;
   flex: 1;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .bookmarkTab {
@@ -55,6 +67,7 @@
   position: absolute;
   right: 0;
   top: 5rem;
+  z-index: 10;
 }
 /* PREVIEW RESULT/BOOKMARK SECTION */
 .bookmarks__list {
@@ -78,7 +91,7 @@
 .preview__fig {
   width: 4rem;
   height: 4rem;
-  background-color: gray;
+  background-color: var(--body-color);
   border-radius: 5rem;
 }
 .preview {
@@ -87,19 +100,49 @@
 }
 .nav {
   cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search {
+  position: relative;
 }
 .search__field {
-  padding: 0.5rem;
-  /* border-radius: 0.8rem; */
+  padding: 0.75rem 1rem;
   border: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 30rem;
+  height: 3rem;
+}
+
+/* Focus effect */
+.search__field:focus {
+  outline: none;
+  background-color: var(--body-color);
+  border: 1rem thin var(--hover-color);
 }
 
 .search__btn {
+  position: absolute;
+  right: 0rem;
+  border-radius: 0;
   padding: 0.5rem;
+  width: 6rem;
+  height: 3rem;
 }
 
-.addRecipe:hover,
-.click__bookmark:hover {
+.btn__direction {
+  border-radius: 0;
+}
+
+.nav__item:hover {
   color: var(--hover-color);
 }
 
@@ -109,7 +152,7 @@
   flex-direction: column;
   padding: 0.5rem;
   gap: 1rem;
-  background-color: rgba(128, 128, 128, 0.372);
+  background-color: var(--secondary-color);
 }
 .results {
   flex: 1;
@@ -126,7 +169,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 2rem;
 }
 .error,
 .message,
@@ -135,6 +178,7 @@
   flex-direction: row;
   gap: 1rem;
   margin: 5rem auto;
+  height: 100vh;
 }
 .recipe__ingredient {
   display: flex;
@@ -143,31 +187,38 @@
 .direction {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 .recipe__img {
-  width: 100%;
+  width: 98%;
   height: 30rem;
   background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  /* Eye-friendly filter */
+  filter: brightness(1.05) contrast(0.95) saturate(0.92) blur(0.3px);
+
+  object-fit: cover;
+  overflow: hidden;
 }
+
 .recipe__fig {
   height: 34rem;
-  background-color: blueviolet;
 }
 .recipe__details {
-  background-color: pink;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: baseline;
+  padding: 1rem;
+  box-shadow: 0px 0px 5px 0px #0000004a;
 }
 .recipe__ingredient {
   display: flex;
 }
-.recipe__ingredients {
-  background-color: cadetblue;
-}
-.recipe__directions {
-  background-color: burlywood;
-}
+
 .recipe__ingredient-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -177,16 +228,24 @@
 .btn--tiny {
   border-radius: 2rem;
   border: none;
-  background-color: rgba(240, 248, 255, 0.018);
+  background-color: var(--transparent);
 }
 .btn--round {
   border: none;
-  background-color: rgba(216, 191, 216, 0);
+  background-color: var(--transparent);
 }
 
 .recipe__info-buttons {
   display: flex;
   justify-content: space-around;
+}
+
+.recipe__directions {
+  box-shadow: 0px 0px 5px 0px #0000004a;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 /* *****************ADD RECIPE WINDOW*************** */
 .add-recipe-window {
@@ -197,11 +256,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 2rem auto;
-  background: #f9f9f9;
+  background: var(--bookmark-color);
   padding: 2rem;
   border-radius: 10px;
   font-size: 2rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2rem 4rem var(--box-shadow-color);
 }
 
 .hidden {
@@ -210,9 +269,9 @@
 
 .btn--close-modal {
   float: right;
-  background: #ff4d4d;
+  background: var(--svg-color);
   border: none;
-  color: white;
+  color: var(--body-color);
   padding: 0.5rem 1rem;
   font-size: 2rem;
   border-radius: 5px;
@@ -223,7 +282,7 @@
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-color);
 }
 
 .upload {
@@ -243,20 +302,20 @@
   padding: 0.5rem;
   font-size: 1.5rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--body-color);
   width: 100%;
 }
 
 .upload input:focus {
-  border-color: #007bff;
+  border-color: var(--svg-color);
   outline: none;
-  padding: 1rem;
 }
 
 .upload__btn {
   grid-column: 2 / 3;
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
+  /* bg an color is fixed for this set in both dark and light mode */
   background: #28a745;
   color: white;
   font-weight: bold;

@@ -3,6 +3,10 @@ export class View {
   _data;
   render(renderData = null, boolean = true) {
     this._data = renderData;
+    //return only data
+    if (boolean === 'data') {
+      return;
+    }
     // if (!renderData) return;
     if (!boolean) return this._generateMarkup();
 

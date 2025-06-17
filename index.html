@@ -4,11 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script type="module" src="./src/js/controller.js"></script>
   </head>
   <body>
+    <!-- local svg
+                <svg>
+                <use href="./css/sprite.svg#icon-global"></use>
+                </svg> 
+    -->
+
+    <!-- dark mode
+     :root {
+  --html-color:#2f3136
+  --primary-color: #2f3136; /* Navbar: Discord's main dark slate */
+  --secondary-color: #202225; /* Search bar: Slightly darker than nav */
+  --bookmark-color: #36393f; /* Bookmark/upload: Clean mid-gray bg */
+  --text-color: #dcddde; /* Text: Light gray for contrast */
+  --body-color: #2b2d31; /* Recipe reading: rich slate */
+  --svg-color: #b9bbbe; /* Icon color: Discord's neutral icon tone */
+  --hover-color: #5865f2; /* Hover: Discord blurple */
+  --button-color: #3ba55d; /* Buttons: Soft Discord green */
+  --box-shadow-color: rgba(0, 0, 0, 0.4); /* Dark subtle depth */
+  --transparent: rgba(32, 34, 37, 0); /* Transparent on dark base */
+}
+
+
+
+LIGHT MODE 
+
+    -->
     <div class="container">
       <!-- MAIN HEADER WITH LINKS -->
       <header class="header grid-3-header">
@@ -21,7 +52,7 @@
               alt="nutrition plan"
             />
           </div>
-          <p class="logo__text">FOOD RECIPE AND DIET</p>
+          <h1 class="logo__text">FOOD RECIPE AND DIET</h1>
         </div>
 
         <form class="search">
@@ -30,16 +61,31 @@
             class="search__field"
             placeholder="Search over 1,000,000 recipes..."
           />
-          <button class="btn search__btn">Search</button>
+          <button class="btn search__btn">
+            <svg>
+              <use href="./css/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
         </form>
 
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <p class="addRecipe">Add recipe</p>
+              <svg class="theme">
+                <use href="./css/sprite.svg#icon-moon-fill"></use>
+              </svg>
             </li>
-            <li class="nav__item">
-              <p class="click__bookmark">Bookmarks</p>
+            <li class="nav__item addRecipe">
+              <svg>
+                <use href="./css/sprite.svg#icon-cloud-upload"></use>
+              </svg>
+              <p class="hover__nav">Upload</p>
+            </li>
+            <li class="nav__item click__bookmark">
+              <svg>
+                <use href="./css/sprite.svg#icon-book"></use>
+              </svg>
+              <p class="hover__nav">Bookmarks</p>
               <div class="bookmarks bookmarkTab hidden">
                 <ul class="bookmarks__list">
                   <!-- <div class="message">
