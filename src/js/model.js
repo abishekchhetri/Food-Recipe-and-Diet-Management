@@ -56,13 +56,12 @@ export const loadBlog = async function () {
     });
     const blog = await data.json();
     state.blog = blog.record;
-    console.log(state.blog);
   } catch (err) {
     throw new Error(err);
   }
 };
 
-export const uploadBlog = async function (json) {
+const uploadBlog = async function (json) {
   try {
     const data = await fetch(`https://api.jsonbin.io/v3/b/${BLOG_KEY}`, {
       method: 'PUT',
@@ -75,6 +74,21 @@ export const uploadBlog = async function (json) {
 
     const res = await data.json();
     console.log(res.record);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export const uploadBlogPosts = async function (BlogObject) {
+  try {
+    state.blog.posts.unshift(BlogObject);
+    //assign id to blogObject
+    let i = 1;
+    for (let post of state.blog.posts) {
+      post.id = i;
+      i++;
+    }
+    await uploadBlog(state.blog);
   } catch (err) {
     throw new Error(err);
   }

@@ -3,7 +3,7 @@ import { Fraction } from 'fraction.js';
 import icons from 'url:../../../css/sprite.svg';
 class BlogView extends View {
   _parentEl = document.querySelector('.recipe');
-  _errorMessage = 'Error loading recipe!';
+  _errorMessage = 'Error in JSON BIN, HOLD ON OR REFRESH!';
   _successMessage = 'Start by searching for recipe!';
 
   // <svg>
@@ -13,6 +13,8 @@ class BlogView extends View {
   _generateMarkup() {
     return `
     <main class="blog">
+    <h1>ALL FOOD DIET POSTS </h1>
+    <p style="margin-bottom:2rem; margin-top:2rem">This post is managed by <span class = "dev">developer</span> and his collaborators</p>
       ${this._data.posts
         .map(
           post => `

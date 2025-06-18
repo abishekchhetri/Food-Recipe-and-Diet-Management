@@ -15,6 +15,19 @@ import { blog } from './views/dietBlog';
 const showRecipe = async function () {
   try {
     //feed blog data
+    // await data.loadBlog();
+    // await data.uploadBlogPosts({
+    //   title: 'Tofu Masala',
+    //   content:
+    //     "Tofu is a beloved vegetarian dish in Nepal, often enjoyed during festivals, family gatherings, or regular meals. It combines traditional ingredients and regional spices, bringing out a deep cultural flavor unique to Nepalese cuisine. Prepared using time-tested methods passed down generations, this dish is rich in nutrients, affordable, and adaptable to seasonal vegetables. Many communities consider Aloo Tama a comfort food that reflects Nepal’s culinary heritage. It can be served with rice or roti, and variations exist in different provinces. What makes Aloo Tama particularly special is its balance between flavor and nutrition—a true staple of a vegetarian Nepali diet. It's not just food but a tradition. With no artificial additives and made from locally sourced ingredients, Aloo Tama also supports sustainable cooking. Whether made spicy or mild, it is known to please everyone across age groups. Nutritious and packed with local taste, this dish deserves a place on any wholesome vegetarian menu.",
+    //   image:
+    //     'https://dishingouthealth.com/wp-content/uploads/2020/12/TofuTikkaMasala_Square3.jpg',
+    //   createdAt: Date.now(),
+    //   uploader: 'Avishek Chhetri',
+    //   veg: true,
+    //   caloriesPerServing: 305,
+    // });
+
     await data.loadBlog();
     blog.render(data.state.blog);
     // recipeView.renderSuccess();

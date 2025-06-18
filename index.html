@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="./css/media.css" />
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <script type="module" src="./src/js/controller.js"></script>
@@ -70,11 +70,17 @@ LIGHT MODE
 
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item">
-              <svg class="theme">
-                <use href="./css/sprite.svg#icon-moon-fill"></use>
-              </svg>
-            </li>
+            <svg class="theme">
+              <use href="./css/sprite.svg#icon-sun-stroke"></use>
+            </svg>
+          </ul>
+          <svg class="show__button three__liner">
+            <use href="./css/sprite.svg#icon-cog"></use>
+          </svg>
+        </nav>
+
+        <nav class="nav__slider">
+          <ul class="nav__list quickBox showList hidden">
             <li class="nav__item addRecipe">
               <svg>
                 <use href="./css/sprite.svg#icon-cloud-upload"></use>
@@ -148,37 +154,72 @@ LIGHT MODE
                 </ul>
               </div>
             </li>
+
+            <li class="nav__item goto__blogspot">
+              <svg>
+                <use href="./css/sprite.svg#icon-leaf"></use>
+              </svg>
+              <p class="hover__nav">FoodBlog</p>
+            </li>
+
+            <li class="nav__item click__admin">
+              <svg>
+                <use href="./css/sprite.svg#icon-user"></use>
+              </svg>
+              <p class="hover__nav">Admin</p>
+            </li>
+
+            <li class="nav__item click__diet">
+              <svg>
+                <use href="./css/sprite.svg#icon-book"></use>
+              </svg>
+              <p class="hover__nav">Manage Diet</p>
+            </li>
+
+            <li class="nav__item click__about">
+              <svg>
+                <use href="./css/sprite.svg#icon-star"></use>
+                <p class="about">About</p>
+              </svg>
+            </li>
           </ul>
         </nav>
       </header>
 
       <!-- SEARCH RESULTS -->
-      <div class="search-results">
-        <ul class="results">
-          <!-- <li class="preview">
-            <a class="preview__link preview__link--active" href="#23456">
-              <figure class="preview__fig">
-                <img src="./css/image.png" alt="Test" class="preview__fig" />
-              </figure>
-              <div class="preview__data">
-                <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
-                <p class="preview__publisher">The Pioneer Woman</p>
-                <div class="preview__user-generated hidden">UserGenerated</div>
-              </div>
-            </a>
-          </li> -->
-        </ul>
-
-        <div class="pagination">
-          <!-- <button class="btn--inline pagination__btn--prev">
-            <span>Page 1</span>
+      <div class="wrapper">
+        <div class="search-results hidden">
+          <button class="search__cancel">
+            <svg>
+              <use href="./css/sprite.svg#icon-x"></use>
+            </svg>
           </button>
-          <button class="btn--inline pagination__btn--next">
-            <span>Page 3</span>
-          </button> -->
-        </div>
+          <ul class="results">
+            <!-- <li class="preview">
+               <a class="preview__link preview__link--active" href="#23456">
+                 <figure class="preview__fig">
+                   <img src="./css/image.png" alt="Test" class="preview__fig" />
+                 </figure>
+                 <div class="preview__data">
+                   <h4 class="preview__title">Pasta with Tomato Cream ...</h4>
+                   <p class="preview__publisher">The Pioneer Woman</p>
+                   <div class="preview__user-generated hidden">UserGenerated</div>
+                 </div>
+               </a>
+             </li> -->
+          </ul>
 
-        <p class="copyright">This frontend is designed by abiking</p>
+          <div class="pagination">
+            <!-- <button class="btn--inline pagination__btn--prev">
+               <span>Page 1</span>
+             </button>
+             <button class="btn--inline pagination__btn--next">
+               <span>Page 3</span>
+             </button> -->
+          </div>
+
+          <p class="copyright">This frontend is designed by abiking</p>
+        </div>
       </div>
 
       <!-- RECIPE RENDERING SECTION -->

@@ -1,0 +1,37 @@
+@media (max-width: 60em) {
+  html {
+    padding: 0 !important;
+    font-size: 50% !important;
+  }
+  .container {
+    grid-template-columns: 1fr !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .quickBox {
+    position: absolute;
+    flex-direction: column;
+    z-index: 99;
+    width: 20% !important;
+    right: 0;
+  }
+  .search-results {
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    height: 70rem;
+    width: 30rem;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .show__button {
+    display: block !important;
+  }
+  .bookmarkTab {
+    left: -24rem;
+    border: solid thin rgba(0, 0, 0, 0.549);
+  }
+}
