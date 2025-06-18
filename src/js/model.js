@@ -1,5 +1,5 @@
 import { AJAX } from './helper';
-import { API_KEY, RESULT_PER_PAGE } from './config';
+import { API_KEY, RESULT_PER_PAGE, JSON_BIN, BLOG_KEY } from './config';
 import { saveBookmarkLocalStorage } from './helper';
 import { ingredientsRight } from './helper';
 import { validateUploadRecipe } from './helper';
@@ -14,6 +14,7 @@ export const state = {
   },
   bookmarks: [],
   darkTheme: false,
+  blog: [],
 };
 
 export const themeData = {
@@ -43,6 +44,40 @@ export const themeData = {
     [`--box-shadow-color`, `rgba(0,0,0,0.4)`],
     [`--transparent`, `rgba(32,34,37,0)`],
   ],
+};
+
+export const loadBlog = async function () {
+  try {
+    const data = await fetch(`https://api.jsonbin.io/v3/b/${BLOG_KEY}`, {
+      method: 'GET',
+      headers: {
+        'X-Master-Key': JSON_BIN,
+      },
+    });
+    const blog = await data.json();
+    state.blog = blog.record;
+    console.log(state.blog);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+export const uploadBlog = async function (json) {
+  try {
+    const data = await fetch(`https://api.jsonbin.io/v3/b/${BLOG_KEY}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSON_BIN,
+      },
+      body: JSON.stringify(json),
+    });
+
+    const res = await data.json();
+    console.log(res.record);
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
 export const loadRecipe = async function (hash) {

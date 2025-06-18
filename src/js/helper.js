@@ -1,4 +1,8 @@
-import { FETCH_ERROR_TIMEOUT, FETCH_TIMEOUT_TIMER_SECONDS } from './config';
+import {
+  FETCH_ERROR_TIMEOUT,
+  FETCH_TIMEOUT_TIMER_SECONDS,
+  JSON_BIN,
+} from './config';
 
 const timeout = async function (seconds) {
   return new Promise((_, reject) => {
@@ -69,3 +73,40 @@ export const validateUploadRecipe = recipe => {
     recipe.ingredients.length === 0
   );
 };
+
+//JSON BIN
+// (async () => {
+//   const res = await fetch(`https://api.jsonbin.io/v3/b`, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'X-Master-Key':
+//         '$2a$10$xWsIomK6y0NmAwvZNW9peeqktXYrF2/fLHBfajktwD1geXd4AZKFi',
+//       'X-Bin-Name': '6851849c8960c979a5ab7ebb',
+//     },
+//     body: JSON.stringify({
+//       sample: 'hello jsonbin',
+//       user: 'king Jack',
+//       comment: 'nice food app',
+//     }),
+//   });
+
+//   console.log(res);
+//   console.log(res.json());
+// })();
+
+//COLLECTIONS BINS
+// (async () => {
+//   const res = await fetch(
+//     `https://api.jsonbin.io/v3/c/68515f278561e97a5025c611/bins`,
+//     {
+//       method: 'GET',
+//       headers: {
+//         'X-Master-Key': JSON_BIN,
+//       },
+//     }
+//   );
+
+//   console.log(res);
+//   console.log(res.json());
+// })();

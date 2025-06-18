@@ -10,10 +10,14 @@ import { addRecipeView } from './views/addRecipeView';
 import { ADD_RECIPE_EVENT_TIMEOUT } from './config';
 import { RECIPE_RENDER_TIMEOUT } from './config';
 import { toggleFields } from './views/toggleView';
+import { blog } from './views/dietBlog';
 
 const showRecipe = async function () {
   try {
-    recipeView.renderSuccess();
+    //feed blog data
+    await data.loadBlog();
+    blog.render(data.state.blog);
+    // recipeView.renderSuccess();
     const hash = window.location.hash.slice(1);
     if (!hash) return;
     recipeView.renderSpinner();
