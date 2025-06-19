@@ -46,10 +46,13 @@ class toggleView extends View {
     //assuming user wont toggle manually
 
     if (window.innerWidth <= 970) {
+      this.navBar.classList.add('hidden');
+      // this.bookmarkTab.classList.add('hidden');
+      this.searchResult.classList.add('hidden');
       this.searchCancel.classList.remove('hidden');
       this.threeLiner.addEventListener('click', () => {
         this.navBar.classList.toggle('hidden');
-        this.bookmarkTab.classList.toggle('hidden');
+        this.bookmarkTab.classList.add('hidden');
       });
 
       this.search.addEventListener('click', () => {
@@ -62,7 +65,8 @@ class toggleView extends View {
         this._overlay.classList.toggle('hidden');
       });
     } else {
-      this.searchCancel.classList.add('hidden');
+      this.bookmarkTab.classList.toggle('hidden');
+      this.searchCancel.classList.toggle('hidden');
     }
   }
 }

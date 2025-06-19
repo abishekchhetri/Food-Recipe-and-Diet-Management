@@ -56,6 +56,7 @@ export const loadBlog = async function () {
     });
     const blog = await data.json();
     state.blog = blog.record;
+    console.log(state.blog);
   } catch (err) {
     throw new Error(err);
   }
@@ -81,6 +82,18 @@ const uploadBlog = async function (json) {
 
 export const uploadBlogPosts = async function (BlogObject) {
   try {
+    //delete operation
+    if (BlogObject === 'delete') {
+      let i = 1;
+      for (let post of state.blog.posts) {
+        post.id = i;
+        i++;
+      }
+      await uploadBlog(state.blog);
+      return;
+    }
+
+    //core delete operation
     state.blog.posts.unshift(BlogObject);
     //assign id to blogObject
     let i = 1;
@@ -94,6 +107,11 @@ export const uploadBlogPosts = async function (BlogObject) {
   }
 };
 
+export const deleteBlog = async function (id) {
+  id = id - 1;
+  state.blog.posts.splice(id, 1);
+  uploadBlogPosts('delete');
+};
 export const loadRecipe = async function (hash) {
   try {
     const response = await AJAX(

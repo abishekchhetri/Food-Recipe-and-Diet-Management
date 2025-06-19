@@ -85,6 +85,10 @@ class RecipeView extends View {
             }</span>. Please check out
             directions at their website.
           </p>
+          <div>
+          <h2>Share this recipe</h2>
+          <img style = "width:10rem;height:10rem"src="https://qrtag.net/api/qr.png" alt="qrtag">
+          </div>
           <button class = "btn__direction">
           <a
             class="btn--small recipe__btn"
@@ -121,7 +125,7 @@ class RecipeView extends View {
   }
   addHandlerUpdateServings(handler) {
     this._parentEl.addEventListener('click', e => {
-      let servingCount = this._data.servings;
+      let servingCount = this?._data?.servings;
       const btn = e.target.closest('button');
       if (!btn || !btn.classList.contains('btn--tiny')) return;
       if (btn.classList.contains('btn--decrease-servings')) servingCount--;

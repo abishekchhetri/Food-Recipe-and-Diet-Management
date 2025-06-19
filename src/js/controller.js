@@ -11,35 +11,27 @@ import { ADD_RECIPE_EVENT_TIMEOUT } from './config';
 import { RECIPE_RENDER_TIMEOUT } from './config';
 import { toggleFields } from './views/toggleView';
 import { blog } from './views/dietBlog';
+import { adminView } from './views/adminView';
 
 const showRecipe = async function () {
   try {
-    //feed blog data
-    // await data.loadBlog();
-    // await data.uploadBlogPosts({
-    //   title: 'Tofu Masala',
-    //   content:
-    //     "Tofu is a beloved vegetarian dish in Nepal, often enjoyed during festivals, family gatherings, or regular meals. It combines traditional ingredients and regional spices, bringing out a deep cultural flavor unique to Nepalese cuisine. Prepared using time-tested methods passed down generations, this dish is rich in nutrients, affordable, and adaptable to seasonal vegetables. Many communities consider Aloo Tama a comfort food that reflects Nepal’s culinary heritage. It can be served with rice or roti, and variations exist in different provinces. What makes Aloo Tama particularly special is its balance between flavor and nutrition—a true staple of a vegetarian Nepali diet. It's not just food but a tradition. With no artificial additives and made from locally sourced ingredients, Aloo Tama also supports sustainable cooking. Whether made spicy or mild, it is known to please everyone across age groups. Nutritious and packed with local taste, this dish deserves a place on any wholesome vegetarian menu.",
-    //   image:
-    //     'https://dishingouthealth.com/wp-content/uploads/2020/12/TofuTikkaMasala_Square3.jpg',
-    //   createdAt: Date.now(),
-    //   uploader: 'Avishek Chhetri',
-    //   veg: true,
-    //   caloriesPerServing: 305,
-    // });
-
-    await data.loadBlog();
-    blog.render(data.state.blog);
-    // recipeView.renderSuccess();
     const hash = window.location.hash.slice(1);
-    if (!hash) return;
-    recipeView.renderSpinner();
-    await data.loadRecipe(hash);
-    data.saveOrRenderBookmarkStatus(data.state.recipe.id, true);
-    bookmarksView.render(data.state.bookmarks);
-    recipeView.render(data.state.recipe);
-    resultView.render(data.state.search.resultPerPage);
-    // addRecipeView.render();
+    //navigator frontend client api routing via hash values to prevent points loss in jsonbin
+    if (hash === 'blogs') {
+      recipeView.renderSpinner();
+      await data.loadBlog();
+      blog.render(data.state.blog);
+      return;
+    } else if (!hash || hash.length < 10) return;
+    else {
+      recipeView.renderSpinner();
+      await data.loadRecipe(hash);
+      data.saveOrRenderBookmarkStatus(data.state.recipe.id, true);
+      bookmarksView.render(data.state.bookmarks);
+      recipeView.render(data.state.recipe);
+      resultView.render(data.state.search.resultPerPage);
+      // addRecipeView.render();
+    }
   } catch (err) {
     recipeView.renderError();
     console.log(err);
@@ -126,6 +118,40 @@ const controlToggleTheme = function () {
   toggleFields.render(data.state.darkTheme);
 };
 
+const controlAdmin = function () {
+  adminView.render(data.state.blog);
+};
+
+const controlAdminUploadPost = async function (postObject) {
+  try {
+    await data.uploadBlogPosts(postObject);
+    adminView.renderSuccess();
+    setTimeout(() => {
+      adminView.render(data.state.blog);
+    }, 2000);
+  } catch (err) {
+    recipeView.renderError();
+    console.log(err);
+  }
+};
+
+const controlAdminDeletePost = async function (id) {
+  try {
+    await data.deleteBlog(id);
+    adminView.renderSuccess();
+    setTimeout(() => {
+      adminView.render(data.state.blog);
+    }, 2000);
+  } catch (err) {
+    recipeView.renderError();
+    console.log(err);
+  }
+};
+
+const controlBlog = async function () {
+  window.location.hash = 'blogs';
+  location.reload();
+};
 const init = function () {
   recipeView.addHandlerRender(showRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
@@ -136,5 +162,10 @@ const init = function () {
   toggleFields.addHandlerToggle();
   toggleFields.addHandlerToggleTheme(controlToggleTheme);
   addRecipeView._addHandlerUpload(controlAddRecipe);
+  adminView.addHandlerAdmin(controlAdmin);
+  adminView.addHandlerAdminUploadPost(controlAdminUploadPost);
+  adminView.addHandlerAdminDeletePost(controlAdminDeletePost);
+  blog.addHandlerBlogspot(controlBlog);
 };
+
 init();

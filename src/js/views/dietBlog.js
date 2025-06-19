@@ -5,7 +5,7 @@ class BlogView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error in JSON BIN, HOLD ON OR REFRESH!';
   _successMessage = 'Start by searching for recipe!';
-
+  postButton = document.querySelector('.goto__blogspot');
   // <svg>
   //    <use href="${icons}#icon-eye"></use>
   //  </svg>
@@ -29,22 +29,31 @@ class BlogView extends View {
               ${post.title} ${post.veg ? '🥦' : '🍗'}
             </h2>
             <p class="post__meta">
-              <span class="post__author">👤 ${post.uploader}</span> |
-              <span class="post__date">📅 ${new Date(
-                post.createdAt
-              ).toDateString()}</span> |
+              <span style = "color:var(--hover-color); font-size:1.2rem">POST ID : ${
+                post.id
+              } </span> | <span class="post__author">👤 ${
+            post.uploader
+          }</span> | <span class="post__date">📅 ${new Date(
+            post.createdAt
+          ).toDateString()}</span> |
               <span class="post__calories">🔥 ${
                 post.caloriesPerServing
               } kcal</span>
             </p>
             <p class="post__content">${post.content}</p>
           </div>
-        </article>
+        </article> 
       `
         )
         .join('')}
     </main>
   `;
+  }
+
+  addHandlerBlogspot(handler) {
+    this.postButton.addEventListener('click', () => {
+      handler();
+    });
   }
 }
 
