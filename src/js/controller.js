@@ -158,6 +158,10 @@ const controlDietManagement = function () {
   data.loadParameters();
   dietMgt.render(data.state);
 };
+const controlDietSearch = function (typeTimeObj) {
+  data.searchOptions(typeTimeObj);
+  dietMgt.render(data.state);
+};
 
 const init = function () {
   recipeView.addHandlerRender(showRecipe);
@@ -173,7 +177,8 @@ const init = function () {
   adminView.addHandlerAdminUploadPost(controlAdminUploadPost);
   adminView.addHandlerAdminDeletePost(controlAdminDeletePost);
   blog.addHandlerBlogspot(controlBlog);
-  dietMgt.handleSearchRecipe(controlDietManagement);
+  dietMgt.handlerRecipeContainer(controlDietManagement);
+  dietMgt.handlerSearchButton(controlDietSearch);
 };
 
 init();

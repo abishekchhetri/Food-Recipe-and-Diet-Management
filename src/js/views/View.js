@@ -80,4 +80,10 @@ export class View {
     </div> `;
     this.renderComponent(html);
   }
+
+  parentHasCurrentDiv(classNameToInclude) {
+    return [...this._parentEl.childNodes].some(val =>
+      val.classList?.contains(classNameToInclude)
+    );
+  }
 }

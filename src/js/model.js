@@ -308,11 +308,17 @@ export const loadParameters = function () {
 
 //state.filterRecipe will give filtered with time and dietType
 export const searchOptions = function (objectOptions) {
-  objectOptions = { time: 'Lunch/Dinner', dietType: 'Vegetarian' };
-  state.filterRecipe = state.localRecipe.filter(
-    val =>
-      val.dietType === objectOptions.dietType && val.time === objectOptions.time
-  );
+  console.log(objectOptions);
+
+  state.filterRecipe = state.localRecipe.filter(val => {
+    if (!objectOptions.time) return val.dietType === objectOptions.dietType;
+    else if (!objectOptions.dietType) return val.time === objectOptions.time;
+    else
+      return (
+        val.dietType === objectOptions.dietType &&
+        val.time === objectOptions.time
+      );
+  });
 };
 
 /*
