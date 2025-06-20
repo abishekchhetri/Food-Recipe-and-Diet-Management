@@ -1,0 +1,633 @@
+[
+  {
+    "name": "Dal Bhat",
+    "time": "Lunch",
+    "calories": 650,
+    "dietType": "Vegetarian",
+    "description": "Traditional Nepali meal with lentil soup, rice, and vegetables."
+  },
+  {
+    "name": "Momo",
+    "time": "Snack",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Steamed dumplings filled with vegetables or meat, a popular Nepali snack."
+  },
+  {
+    "name": "Chicken Curry and Rice",
+    "time": "Dinner",
+    "calories": 700,
+    "dietType": "Non-Vegetarian",
+    "description": "Spicy chicken curry served with plain rice, a common South Asian dish."
+  },
+  {
+    "name": "Pani Puri",
+    "time": "Snack",
+    "calories": 150,
+    "dietType": "Vegetarian",
+    "description": "Hollow crispy balls filled with spiced potatoes, chickpeas, and tangy tamarind water."
+  },
+  {
+    "name": "Thukpa",
+    "time": "Lunch",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "Tibetan noodle soup with vegetables, often served with chicken or buff."
+  },
+  {
+    "name": "Sel Roti",
+    "time": "Breakfast",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Traditional Nepali ring-shaped bread made from rice flour, often eaten with yogurt or pickle."
+  },
+  {
+    "name": "Gundruk Dhido",
+    "time": "Dinner",
+    "calories": 550,
+    "dietType": "Vegetarian",
+    "description": "Fermented leafy green vegetable stew served with Dhido (cornmeal porridge)."
+  },
+  {
+    "name": "Samay Baji",
+    "time": "Snack",
+    "calories": 450,
+    "dietType": "Non-Vegetarian",
+    "description": "Traditional Newari platter with beaten rice, smoked meat, fried eggs, and various side dishes."
+  },
+  {
+    "name": "Chatamari",
+    "time": "Snack",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "Newari rice flour crepe, often topped with minced meat or vegetables."
+  },
+  {
+    "name": "Yomari",
+    "time": "Snack",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "Traditional Newari steamed dumpling filled with molasses and sesame seeds or chaku."
+  },
+  {
+    "name": "Dhokla",
+    "time": "Snack",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Savory steamed cake made from fermented chickpea batter, popular in Gujarat, India."
+  },
+  {
+    "name": "Masala Dosa",
+    "time": "Breakfast",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "South Indian crepe made from fermented rice and lentil batter, filled with spiced potato."
+  },
+  {
+    "name": "Idli Sambar",
+    "time": "Breakfast",
+    "calories": 280,
+    "dietType": "Vegetarian",
+    "description": "Steamed rice cakes served with lentil soup (sambar) and coconut chutney."
+  },
+  {
+    "name": "Aloo Paratha",
+    "time": "Breakfast",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Indian flatbread stuffed with spiced mashed potatoes."
+  },
+  {
+    "name": "Chole Bhature",
+    "time": "Lunch",
+    "calories": 600,
+    "dietType": "Vegetarian",
+    "description": "Spicy chickpea curry served with deep-fried leavened bread."
+  },
+  {
+    "name": "Palak Paneer",
+    "time": "Dinner",
+    "calories": 450,
+    "dietType": "Vegetarian",
+    "description": "Spinach and cottage cheese curry, a popular North Indian dish."
+  },
+  {
+    "name": "Butter Chicken",
+    "time": "Dinner",
+    "calories": 600,
+    "dietType": "Non-Vegetarian",
+    "description": "Creamy tomato-based chicken curry, a classic Indian dish."
+  },
+  {
+    "name": "Biryani",
+    "time": "Dinner",
+    "calories": 750,
+    "dietType": "Non-Vegetarian",
+    "description": "Fragrant rice dish cooked with meat (chicken, mutton, or beef) and aromatic"
+  },
+  {
+    "name": "Dal Bhat",
+    "time": "Lunch",
+    "calories": 650,
+    "dietType": "Vegetarian",
+    "description": "Traditional Nepali meal with lentil soup, rice, and vegetables."
+  },
+  {
+    "name": "Momo",
+    "time": "Snack",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Steamed dumplings filled with vegetables or meat, a popular Nepali snack."
+  },
+  {
+    "name": "Chicken Curry and Rice",
+    "time": "Dinner",
+    "calories": 700,
+    "dietType": "Non-Vegetarian",
+    "description": "Spicy chicken curry served with plain rice, a common South Asian dish."
+  },
+  {
+    "name": "Pani Puri",
+    "time": "Snack",
+    "calories": 150,
+    "dietType": "Vegetarian",
+    "description": "Hollow crispy balls filled with spiced potatoes, chickpeas, and tangy tamarind water."
+  },
+  {
+    "name": "Thukpa",
+    "time": "Lunch",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "Tibetan noodle soup with vegetables, often served with chicken or buff."
+  },
+  {
+    "name": "Sel Roti",
+    "time": "Breakfast",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Traditional Nepali ring-shaped bread made from rice flour, often eaten with yogurt or pickle."
+  },
+  {
+    "name": "Gundruk Dhido",
+    "time": "Dinner",
+    "calories": 550,
+    "dietType": "Vegetarian",
+    "description": "Fermented leafy green vegetable stew served with Dhido (cornmeal porridge)."
+  },
+  {
+    "name": "Samay Baji",
+    "time": "Snack",
+    "calories": 450,
+    "dietType": "Non-Vegetarian",
+    "description": "Traditional Newari platter with beaten rice, smoked meat, fried eggs, and various side dishes."
+  },
+  {
+    "name": "Chatamari",
+    "time": "Snack",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "Newari rice flour crepe, often topped with minced meat or vegetables."
+  },
+  {
+    "name": "Yomari",
+    "time": "Snack",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "Traditional Newari steamed dumpling filled with molasses and sesame seeds or chaku."
+  },
+  {
+    "name": "Dhokla",
+    "time": "Snack",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Savory steamed cake made from fermented chickpea batter, popular in Gujarat, India."
+  },
+  {
+    "name": "Masala Dosa",
+    "time": "Breakfast",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "South Indian crepe made from fermented rice and lentil batter, filled with spiced potato."
+  },
+  {
+    "name": "Idli Sambar",
+    "time": "Breakfast",
+    "calories": 280,
+    "dietType": "Vegetarian",
+    "description": "Steamed rice cakes served with lentil soup (sambar) and coconut chutney."
+  },
+  {
+    "name": "Aloo Paratha",
+    "time": "Breakfast",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Indian flatbread stuffed with spiced mashed potatoes."
+  },
+  {
+    "name": "Chole Bhature",
+    "time": "Lunch",
+    "calories": 600,
+    "dietType": "Vegetarian",
+    "description": "Spicy chickpea curry served with deep-fried leavened bread."
+  },
+  {
+    "name": "Palak Paneer",
+    "time": "Dinner",
+    "calories": 450,
+    "dietType": "Vegetarian",
+    "description": "Spinach and cottage cheese curry, a popular North Indian dish."
+  },
+  {
+    "name": "Butter Chicken",
+    "time": "Dinner",
+    "calories": 600,
+    "dietType": "Non-Vegetarian",
+    "description": "Creamy tomato-based chicken curry, a classic Indian dish."
+  },
+  {
+    "name": "Biryani",
+    "time": "Dinner",
+    "calories": 750,
+    "dietType": "Non-Vegetarian",
+    "description": "Fragrant rice dish cooked with meat (chicken, mutton, or beef) and aromatic"
+  },
+  [
+  {
+    "name": "Dal Bhat",
+    "time": "Lunch, Dinner",
+    "calories": 650,
+    "dietType": "Vegetarian",
+    "description": "The quintessential Nepali meal, a wholesome combination of steamed rice and lentil soup, typically served with seasonal vegetable curry and pickle."
+  },
+  {
+    "name": "Momo (Chicken)",
+    "time": "Snack, Lunch",
+    "calories": 300,
+    "dietType": "Non-Vegetarian",
+    "description": "Nepal's most beloved snack: steamed dumplings filled with seasoned minced chicken, served with a spicy dipping sauce."
+  },
+  {
+    "name": "Momo (Buff)",
+    "time": "Snack, Lunch",
+    "calories": 320,
+    "dietType": "Non-Vegetarian",
+    "description": "Steamed dumplings filled with seasoned minced buffalo meat, a very popular variation of Momo served with a spicy dipping sauce."
+  },
+  {
+    "name": "Momo (Vegetable)",
+    "time": "Snack, Lunch",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Steamed dumplings filled with a flavorful mixture of seasoned minced vegetables, served with a spicy dipping sauce."
+  },
+  {
+    "name": "Tarkari (Mixed Vegetable Curry)",
+    "time": "Lunch, Dinner",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "A staple side dish for Dal Bhat, prepared with a medley of seasonal vegetables cooked in a flavorful, often spicy, gravy."
+  },
+  {
+    "name": "Achar (Tomato Pickle)",
+    "time": "Side Dish",
+    "calories": 80,
+    "dietType": "Vegetarian",
+    "description": "A spicy and tangy condiment made from fresh tomatoes, a popular and essential accompaniment to most Nepali meals."
+  },
+  {
+    "name": "Achar (Mula/Radish Pickle)",
+    "time": "Side Dish",
+    "calories": 70,
+    "dietType": "Vegetarian",
+    "description": "A pungent and tangy pickle made from grated radish, a traditional Nepali favorite."
+  },
+  {
+    "name": "Chowmein (Chicken)",
+    "time": "Snack, Lunch",
+    "calories": 500,
+    "dietType": "Non-Vegetarian",
+    "description": "Popular Chinese-influenced stir-fried noodles with chicken and mixed vegetables, widely available across Nepal."
+  },
+  {
+    "name": "Chowmein (Vegetable)",
+    "time": "Snack, Lunch",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "Stir-fried noodles with a variety of fresh vegetables, a common and satisfying fast-food option."
+  },
+  {
+    "name": "Chiya (Nepali Milk Tea)",
+    "time": "Beverage",
+    "calories": 70,
+    "dietType": "Vegetarian",
+    "description": "Sweet milk tea, a ubiquitous beverage and daily ritual for most Nepalis, consumed multiple times a day."
+  },
+  {
+    "name": "Roti/Chapati (Flatbread)",
+    "time": "Breakfast, Lunch, Dinner",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Simple, unleavened whole wheat flatbread, commonly eaten with curries or dal, especially in the Terai and many Nepali homes."
+  },
+  {
+    "name": "Puri Tarkari",
+    "time": "Breakfast, Snack",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "Deep-fried puffed bread (puri) served with a spiced potato or mixed vegetable curry (tarkari), a popular breakfast or light meal."
+  },
+  {
+    "name": "Sel Roti",
+    "time": "Breakfast, Snack",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Traditional homemade ring-shaped sweet rice bread, a staple during festivals like Dashain and Tihar, often enjoyed with yogurt or achar."
+  },
+  {
+    "name": "Chiura (Beaten Rice)",
+    "time": "Breakfast, Snack",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Flattened rice, a versatile ingredient consumed dry, with milk, yogurt, or as part of a savory snack platter (Khaja set)."
+  },
+  {
+    "name": "Khaja Set",
+    "time": "Snack",
+    "calories": 500,
+    "dietType": "Mixed",
+    "description": "A popular traditional snack platter that typically includes chiura, aloo chop, bara, and often choyela or other fried snacks and pickles."
+  },
+  {
+    "name": "Samosa",
+    "time": "Snack",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Crispy triangular pastry filled with spiced potatoes and peas, a widely available and popular street food snack."
+  },
+  {
+    "name": "Pani Puri",
+    "time": "Snack",
+    "calories": 150,
+    "dietType": "Vegetarian",
+    "description": "Hollow, crispy fried balls filled with spiced potatoes, chickpeas, and a tangy, spicy tamarind water, a beloved street food."
+  },
+  {
+    "name": "Chatpati",
+    "time": "Snack",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "A vibrant, tangy, and spicy street food mix of puffed rice, crunchy noodles, chickpeas, chopped vegetables, and various chutneys."
+  },
+  {
+    "name": "Jalebi",
+    "time": "Dessert, Snack",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Deep-fried, pretzel-shaped sweets soaked in fragrant sugar syrup, a common sweet treat or breakfast item."
+  },
+  {
+    "name": "Gulab Jamun",
+    "time": "Dessert",
+    "calories": 150,
+    "dietType": "Vegetarian",
+    "description": "Soft, deep-fried milk solid balls soaked in a rose-flavored sugar syrup, a widely enjoyed Indian sweet."
+  },
+  {
+    "name": "Kheer (Rice Pudding)",
+    "time": "Dessert",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "Sweet rice pudding cooked with milk, sugar, and sometimes nuts and dried fruits, often prepared for special occasions."
+  },
+  {
+    "name": "Dahi (Plain Yogurt)",
+    "time": "Side Dish, Snack",
+    "calories": 120,
+    "dietType": "Vegetarian",
+    "description": "Plain yogurt, frequently consumed as a cooling side dish with Dal Bhat or as a refreshing snack on its own."
+  },
+  {
+    "name": "Aloo Tama",
+    "time": "Lunch, Dinner",
+    "calories": 300,
+    "dietType": "Vegetarian",
+    "description": "A traditional Nepali curry with a distinct sour and spicy flavor, made from potatoes and fermented bamboo shoots."
+  },
+  {
+    "name": "Gundruk (Fermented Leafy Greens)",
+    "time": "Side Dish, Soup",
+    "calories": 80,
+    "dietType": "Vegetarian",
+    "description": "Traditional Nepali fermented leafy green vegetables, often served as a tangy pickle (achar) or a sour soup (gundruk ko jhol)."
+  },
+  {
+    "name": "Dhido (Buckwheat/Millet Porridge)",
+    "time": "Dinner",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "A traditional, thick porridge made from buckwheat or millet flour, often consumed as a staple in hilly regions with gundruk or meat curry."
+  },
+  {
+    "name": "Chicken Curry",
+    "time": "Lunch, Dinner",
+    "calories": 650,
+    "dietType": "Non-Vegetarian",
+    "description": "A spicy and flavorful chicken curry, one of the most widely consumed non-vegetarian dishes, served with rice or roti."
+  },
+  {
+    "name": "Buff Curry (Buffalo Meat Curry)",
+    "time": "Lunch, Dinner",
+    "calories": 700,
+    "dietType": "Non-Vegetarian",
+    "description": "A robust curry made from buffalo meat, a very common and popular meat choice in Nepal."
+  },
+  {
+    "name": "Bhuttan (Fried Offal)",
+    "time": "Snack, Appetizer",
+    "calories": 400,
+    "dietType": "Non-Vegetarian",
+    "description": "Spicy stir-fried offal (typically goat or buffalo intestines), a popular appetizer or snack, especially with alcoholic beverages."
+  },
+  {
+    "name": "Sukuti (Dried Meat)",
+    "time": "Snack, Appetizer",
+    "calories": 450,
+    "dietType": "Non-Vegetarian",
+    "description": "Dried and spiced meat (often buffalo or goat), either grilled or fried, commonly enjoyed as a savory snack."
+  },
+  {
+    "name": "Choyela (Spicy Grilled Meat)",
+    "time": "Snack, Appetizer",
+    "calories": 380,
+    "dietType": "Non-Vegetarian",
+    "description": "A traditional Newari dish featuring spicy grilled and marinated meat (commonly buffalo or chicken), typically served cold."
+  },
+  {
+    "name": "Chatamari (Plain/Vegetable)",
+    "time": "Snack",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "A Newari-style savory rice flour crepe, often called 'Nepali pizza', that can be plain or topped with vegetables."
+  },
+  {
+    "name": "Bara (Lentil Pancake)",
+    "time": "Snack",
+    "calories": 280,
+    "dietType": "Vegetarian",
+    "description": "A Newari deep-fried savory lentil pancake, a common and popular snack."
+  },
+  {
+    "name": "Thukpa (Vegetable)",
+    "time": "Lunch, Dinner",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "Tibetan-influenced noodle soup with various vegetables, a popular warming meal, especially in colder regions."
+  },
+  {
+    "name": "Thukpa (Chicken)",
+    "time": "Lunch, Dinner",
+    "calories": 450,
+    "dietType": "Non-Vegetarian",
+    "description": "Tibetan-influenced noodle soup with chicken and vegetables, a comforting and widely consumed meal."
+  },
+  {
+    "name": "Aloo Chop (Spiced Potato Cutlet)",
+    "time": "Snack",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Deep-fried spiced mashed potato patties, a very common and affordable street food snack."
+  },
+  {
+    "name": "Aloo Pakora",
+    "time": "Snack",
+    "calories": 220,
+    "dietType": "Vegetarian",
+    "description": "Crispy deep-fried fritters made from sliced potatoes coated in a spiced gram flour batter, popular tea-time snack."
+  },
+  {
+    "name": "Onion Pakora",
+    "time": "Snack",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "Deep-fried fritters made from thinly sliced onions coated in a spiced gram flour batter, a popular savory snack."
+  },
+  {
+    "name": "Pulao (Vegetable)",
+    "time": "Lunch, Dinner",
+    "calories": 450,
+    "dietType": "Vegetarian",
+    "description": "Aromatic rice dish cooked with mild spices and mixed vegetables, a flavorful alternative to plain rice."
+  },
+  {
+    "name": "Biryani (Chicken)",
+    "time": "Lunch, Dinner",
+    "calories": 650,
+    "dietType": "Non-Vegetarian",
+    "description": "Fragrant layered rice dish cooked with marinated chicken and aromatic spices, very popular in urban areas and for special occasions."
+  },
+  {
+    "name": "Paneer Butter Masala",
+    "time": "Dinner",
+    "calories": 500,
+    "dietType": "Vegetarian",
+    "description": "A rich and creamy Indian vegetarian dish featuring soft cottage cheese cubes in a mildly spiced tomato-based gravy."
+  },
+  {
+    "name": "Naan (Plain)",
+    "time": "Side Dish",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "Leavened flatbread baked in a tandoor (clay oven), commonly served with curries in restaurants and increasingly popular in homes."
+  },
+  {
+    "name": "Tandoori Chicken",
+    "time": "Dinner, Snack",
+    "calories": 600,
+    "dietType": "Non-Vegetarian",
+    "description": "Chicken marinated in yogurt and spices, then roasted in a tandoor, a very popular grilled chicken item found across Nepal."
+  },
+  {
+    "name": "Chicken Sekuwa",
+    "time": "Snack, Appetizer",
+    "calories": 450,
+    "dietType": "Non-Vegetarian",
+    "description": "Spiced and grilled boneless chicken pieces, typically served as skewers. A highly popular street food and appetizer."
+  },
+  {
+    "name": "Buff Chili",
+    "time": "Snack, Appetizer",
+    "calories": 500,
+    "dietType": "Non-Vegetarian",
+    "description": "Spicy stir-fried buffalo meat with bell peppers and onions, a well-loved Indo-Chinese fusion dish, often accompanying drinks."
+  },
+  {
+    "name": "Gobi Manchurian (Dry)",
+    "time": "Snack, Appetizer",
+    "calories": 350,
+    "dietType": "Vegetarian",
+    "description": "Deep-fried cauliflower florets tossed in a dry, spicy, and tangy Manchurian sauce, a very common Indo-Chinese vegetarian appetizer."
+  },
+  {
+    "name": "Egg Curry",
+    "time": "Dinner",
+    "calories": 400,
+    "dietType": "Non-Vegetarian",
+    "description": "Boiled eggs cooked in a flavorful and spicy curry sauce, a common and affordable non-vegetarian protein source."
+  },
+  {
+    "name": "Sadeko Aloo",
+    "time": "Snack, Side Dish",
+    "calories": 250,
+    "dietType": "Vegetarian",
+    "description": "A tangy and spicy salad made with boiled potatoes, fresh herbs, and spices, a popular quick snack or side dish."
+  },
+  {
+    "name": "Mutton Curry",
+    "time": "Lunch, Dinner",
+    "calories": 750,
+    "dietType": "Non-Vegetarian",
+    "description": "A rich and spicy curry made with tender mutton pieces, often prepared for special occasions or traditional Nepali meals."
+  },
+  {
+    "name": "Gwaramari",
+    "time": "Breakfast, Snack",
+    "calories": 220,
+    "dietType": "Vegetarian",
+    "description": "Soft and fluffy deep-fried dough balls, typically eaten with tea as a quick breakfast or snack, especially popular in the Kathmandu Valley."
+  },
+  {
+    "name": "Nimki",
+    "time": "Snack",
+    "calories": 180,
+    "dietType": "Vegetarian",
+    "description": "Crispy, savory deep-fried dough snacks, often diamond-shaped, widely enjoyed with tea."
+  },
+  {
+    "name": "Aloo Paratha",
+    "time": "Breakfast, Lunch",
+    "calories": 400,
+    "dietType": "Vegetarian",
+    "description": "An Indian-influenced flatbread stuffed with spiced mashed potatoes, a popular and filling breakfast or lunch item."
+  },
+  {
+    "name": "Lassi (Sweet)",
+    "time": "Beverage",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "A refreshing sweet yogurt-based drink, often flavored with cardamom, very popular especially during warmer months."
+  },
+  {
+    "name": "Lassi (Salty)",
+    "time": "Beverage",
+    "calories": 100,
+    "dietType": "Vegetarian",
+    "description": "A refreshing savory yogurt-based drink, seasoned with salt and sometimes roasted cumin powder, a cooling beverage."
+  },
+  {
+    "name": "Kalo Dal (Black Lentil Soup)",
+    "time": "Side Dish",
+    "calories": 200,
+    "dietType": "Vegetarian",
+    "description": "A rich and hearty soup made from black lentils, often slow-cooked to a creamy consistency, a common and nutritious part of Nepali meals."
+  }
+]

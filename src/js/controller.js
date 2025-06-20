@@ -12,6 +12,7 @@ import { RECIPE_RENDER_TIMEOUT } from './config';
 import { toggleFields } from './views/toggleView';
 import { blog } from './views/dietBlog';
 import { adminView } from './views/adminView';
+import { dietMgt } from './views/dietManagement';
 
 const showRecipe = async function () {
   try {
@@ -152,6 +153,12 @@ const controlBlog = async function () {
   window.location.hash = 'blogs';
   location.reload();
 };
+
+const controlDietManagement = function () {
+  data.loadParameters();
+  dietMgt.render(data.state);
+};
+
 const init = function () {
   recipeView.addHandlerRender(showRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
@@ -166,6 +173,7 @@ const init = function () {
   adminView.addHandlerAdminUploadPost(controlAdminUploadPost);
   adminView.addHandlerAdminDeletePost(controlAdminDeletePost);
   blog.addHandlerBlogspot(controlBlog);
+  dietMgt.handleSearchRecipe(controlDietManagement);
 };
 
 init();

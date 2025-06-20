@@ -3,6 +3,7 @@ import { API_KEY, RESULT_PER_PAGE, JSON_BIN, BLOG_KEY } from './config';
 import { saveBookmarkLocalStorage } from './helper';
 import { ingredientsRight } from './helper';
 import { validateUploadRecipe } from './helper';
+import { commonRecipe } from './commonRecipes';
 
 export const state = {
   recipe: {},
@@ -15,6 +16,9 @@ export const state = {
   bookmarks: [],
   darkTheme: false,
   blog: [],
+  localRecipe: commonRecipe,
+  recipeParameters: {},
+  filterRecipe: [],
 };
 
 export const themeData = {
@@ -294,6 +298,30 @@ export const uploadRecipe = async function (recipeObject) {
     throw err;
   }
 };
+
+//state.recipeParameters will give the object or parameter we will give
+export const loadParameters = function () {
+  const time = new Set(state.localRecipe.map(val => val.time));
+  const dietType = new Set(state.localRecipe.map(val => val.dietType));
+  state.recipeParameters = { time: [...time], dietType: [...dietType] };
+};
+
+//state.filterRecipe will give filtered with time and dietType
+export const searchOptions = function (objectOptions) {
+  objectOptions = { time: 'Lunch/Dinner', dietType: 'Vegetarian' };
+  state.filterRecipe = state.localRecipe.filter(
+    val =>
+      val.dietType === objectOptions.dietType && val.time === objectOptions.time
+  );
+};
+
+/*
+calories:
+description:
+dietType: Junk/Vegetarian/Non Vegetarian
+name: 
+time: Snack, Lunch/Dinner, Dessert, Side/Snack, Side, Breakfast/Lunch, drink, 
+*/
 
 const init = function () {
   const storage = JSON.parse(localStorage.getItem('ForkifyRecipeBookmarks'));
