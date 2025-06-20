@@ -18,6 +18,7 @@ export const state = {
   blog: [],
   localRecipe: commonRecipe,
   recipeParameters: {},
+  searchParameters: {},
   filterRecipe: [],
 };
 
@@ -308,8 +309,6 @@ export const loadParameters = function () {
 
 //state.filterRecipe will give filtered with time and dietType
 export const searchOptions = function (objectOptions) {
-  console.log(objectOptions);
-
   state.filterRecipe = state.localRecipe.filter(val => {
     if (!objectOptions.time) return val.dietType === objectOptions.dietType;
     else if (!objectOptions.dietType) return val.time === objectOptions.time;
@@ -319,6 +318,14 @@ export const searchOptions = function (objectOptions) {
         val.time === objectOptions.time
       );
   });
+
+  state.searchParameters = {
+    description: `Showing ${
+      state.filterRecipe.length === 0 ? 0 : state.filterRecipe.length
+    } results from ${objectOptions.dietType ? objectOptions.dietType : ''} ${
+      objectOptions.time ? objectOptions.time : ''
+    } diet`,
+  };
 };
 
 /*

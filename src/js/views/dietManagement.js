@@ -44,6 +44,10 @@ class dietManagement extends View {
 
           <button class = "click__check">Search</button>
           <div class="search__result__diet">
+          <h3>${
+            this._data.searchParameters.description ||
+            'Start searching via diet type and time, example click on either type and hit serach that"s it !'
+          }</h3><br>
           <ul class = "search__main">${this._data.filterRecipe
             .map(
               val =>
@@ -64,13 +68,7 @@ class dietManagement extends View {
   }
 
   handlerSearchButton(handler) {
-    // this.dietContainer = document.querySelector('.dietContainer');
-    // this.timeContainer = document.querySelector('.timeContainer');
-    let hasDiet = false;
     let obj = { dietType: null, time: null };
-    let tempClick;
-    let clicker = true;
-
     this._parentEl.addEventListener('click', e => {
       //since many feature share recipe div they pollute event listener so we did solved by this
       if (!this.parentHasCurrentDiv('mainDiet')) return;
@@ -78,8 +76,6 @@ class dietManagement extends View {
 
       if (e.target.classList.contains('diet__list')) {
         const btn = e.target;
-        tempClick = btn;
-        clicker = true;
         [...this._parentEl.querySelector('.dietContainer').childNodes].forEach(
           val => {
             val.firstChild?.classList?.remove('selectedDiet');
@@ -88,7 +84,6 @@ class dietManagement extends View {
         btn.classList?.add('selectedDiet');
         obj.dietType = btn.getAttribute('data-id');
         obj.time = null;
-        hasDiet = true;
       }
 
       if (e.target.classList.contains('time__list')) {
@@ -100,10 +95,13 @@ class dietManagement extends View {
         );
         btn.classList?.add('selectedDiet');
         obj.time = btn.getAttribute('data-id');
-        if (!hasDiet) obj.dietType = null;
+        if (!obj.dietType) obj.dietType = null;
       }
-
-      if (e.target.classList.contains('click__check')) return handler(obj);
+      if (e.target.classList.contains('click__check')) {
+        const copy = { ...obj };
+        obj = { dietType: null, time: null };
+        return handler(copy);
+      }
     });
   }
 
