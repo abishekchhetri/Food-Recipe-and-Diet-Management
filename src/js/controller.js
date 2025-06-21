@@ -14,6 +14,7 @@ import { blog } from './views/dietBlog';
 import { adminView } from './views/adminView';
 import { dietMgt } from './views/dietManagement';
 import { proceedDietView } from './views/finalDietView';
+import { aboutSection } from './views/aboutView';
 
 const showRecipe = async function () {
   try {
@@ -24,8 +25,9 @@ const showRecipe = async function () {
       await data.loadBlog();
       blog.render(data.state.blog);
       return;
-    } else if (!hash || hash.length < 10) return;
-    else {
+    } else if (!hash || hash.length < 10) {
+      aboutSection.render();
+    } else {
       recipeView.renderSpinner();
       await data.loadRecipe(hash);
       data.saveOrRenderBookmarkStatus(data.state.recipe.id, true);
@@ -178,7 +180,6 @@ const controlAddDietToList = function (addedRecipe) {
   data.addDiet(addedRecipe);
   data.findDietStatistics();
   updateDietAndSearch(true);
-  // proceedDietView.render(data.state);
 };
 
 const controlProceedDiet = function () {
@@ -207,6 +208,12 @@ const controlQuitDiet = function () {
   updateDietAndSearch();
 };
 
+const controlAboutSection = function () {
+  window.location.hash = 'about';
+  location.reload();
+  aboutSection.render();
+};
+
 const init = function () {
   recipeView.addHandlerRender(showRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
@@ -227,6 +234,7 @@ const init = function () {
   proceedDietView.addHandlerProceed(controlProceedDiet);
   proceedDietView.addHandlerDeleteButton(controlDeleteDiet);
   proceedDietView.addHandlerGoBack(controlQuitDiet);
+  aboutSection.addHandlerRenderAbout(controlAboutSection);
 };
 
 init();

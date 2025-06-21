@@ -8,7 +8,11 @@ export const JSON_BIN =
   '$2a$10$xWsIomK6y0NmAwvZNW9peeqktXYrF2/fLHBfajktwD1geXd4AZKFi';
 //additional api keys cf1fc6f1-937d-4ec5-a5be-c492e823fb56
 export const BLOG_KEY = '68519b1d8561e97a5025ea4b';
-export const AUTH = 1234;
+export const AUTH =
+  +1234 +
+  RECIPE_RENDER_TIMEOUT * FETCH_ERROR_TIMEOUT * FETCH_TIMEOUT_TIMER_SECONDS;
+console.log(AUTH);
+
 export const ADDED_DIET_LIMIT = 10;
 export const COLORS = [
   '#4169E1',

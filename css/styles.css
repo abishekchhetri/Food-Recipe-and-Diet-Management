@@ -558,3 +558,37 @@ td {
 .chart {
   margin-bottom: 3rem;
 }
+
+/* /////////////ABOUT SECTION //////////// */
+.about__section {
+  background-color: var(--body-color);
+  padding: 2rem 1rem;
+  border-top: 2px solid var(--secondary-color);
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.about__container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  color: var(--text-color);
+}
+
+.about__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--svg-color);
+  text-align: center;
+}
+
+.about__text {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.about__signature {
+  font-style: italic;
+  text-align: right;
+  color: var(--hover-color);
+}
