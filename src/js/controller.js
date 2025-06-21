@@ -13,6 +13,7 @@ import { toggleFields } from './views/toggleView';
 import { blog } from './views/dietBlog';
 import { adminView } from './views/adminView';
 import { dietMgt } from './views/dietManagement';
+import { proceedDietView } from './views/finalDietView';
 
 const showRecipe = async function () {
   try {
@@ -154,13 +155,56 @@ const controlBlog = async function () {
   location.reload();
 };
 
-const controlDietManagement = function () {
-  data.loadParameters();
+//DIET MGT HELPER//////////////////
+const updateDietAndSearch = function (updateRenderOnly = false) {
+  if (!updateRenderOnly) data.searchOptions(data.state.searchName);
+  data.updateFilteredRecipe();
   dietMgt.render(data.state);
 };
+
+///////////////////////////////////
+
+const controlDietManagement = function () {
+  data.loadParameters();
+  updateDietAndSearch();
+};
+
 const controlDietSearch = function (typeTimeObj) {
-  data.searchOptions(typeTimeObj);
-  dietMgt.render(data.state);
+  data.state.searchName = typeTimeObj;
+  updateDietAndSearch();
+};
+
+const controlAddDietToList = function (addedRecipe) {
+  data.addDiet(addedRecipe);
+  data.findDietStatistics();
+  updateDietAndSearch(true);
+  // proceedDietView.render(data.state);
+};
+
+const controlProceedDiet = function () {
+  try {
+    if (!data.state.personalDetails) data.localStorageUser();
+    else {
+      data.getWeightProjectionData();
+      proceedDietView.render(data.state);
+      proceedDietView.addHandlerAddPie();
+    }
+  } catch (err) {
+    alert(err);
+  }
+};
+
+const controlDeleteDiet = function (id) {
+  data.deleteDiet(id);
+  data.updateFilteredRecipe();
+  data.findDietStatistics();
+  data.getWeightProjectionData();
+  proceedDietView.render(data.state);
+  proceedDietView.addHandlerAddPie();
+};
+
+const controlQuitDiet = function () {
+  updateDietAndSearch();
 };
 
 const init = function () {
@@ -179,6 +223,10 @@ const init = function () {
   blog.addHandlerBlogspot(controlBlog);
   dietMgt.handlerRecipeContainer(controlDietManagement);
   dietMgt.handlerSearchButton(controlDietSearch);
+  dietMgt.handlerAddRecipe(controlAddDietToList);
+  proceedDietView.addHandlerProceed(controlProceedDiet);
+  proceedDietView.addHandlerDeleteButton(controlDeleteDiet);
+  proceedDietView.addHandlerGoBack(controlQuitDiet);
 };
 
 init();

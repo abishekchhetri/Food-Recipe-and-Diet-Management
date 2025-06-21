@@ -9,3 +9,26 @@ export const JSON_BIN =
 //additional api keys cf1fc6f1-937d-4ec5-a5be-c492e823fb56
 export const BLOG_KEY = '68519b1d8561e97a5025ea4b';
 export const AUTH = 1234;
+export const ADDED_DIET_LIMIT = 10;
+export const COLORS = [
+  '#4169E1',
+  '#228B22',
+  '#DC143C',
+  '#FFD700',
+  '#E6E6FA',
+  '#36454F',
+  '#008080',
+  '#FF7F50',
+  '#800000',
+  '#40E0D0',
+  '#FFDB58',
+  '#6B8E23',
+  '#8E4585',
+  '#87CEEB',
+  '#B74106',
+  '#50C878',
+  '#000080',
+  '#B76E79',
+  '#708090',
+  '#CC5500',
+];

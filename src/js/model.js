@@ -1,5 +1,11 @@
 import { AJAX } from './helper';
-import { API_KEY, RESULT_PER_PAGE, JSON_BIN, BLOG_KEY } from './config';
+import {
+  API_KEY,
+  RESULT_PER_PAGE,
+  JSON_BIN,
+  BLOG_KEY,
+  ADDED_DIET_LIMIT,
+} from './config';
 import { saveBookmarkLocalStorage } from './helper';
 import { ingredientsRight } from './helper';
 import { validateUploadRecipe } from './helper';
@@ -20,6 +26,10 @@ export const state = {
   recipeParameters: {},
   searchParameters: {},
   filterRecipe: [],
+  addedDiet: [],
+  searchName: '',
+  personalDetails: null,
+  dietSummary: {},
 };
 
 export const themeData = {
@@ -307,17 +317,28 @@ export const loadParameters = function () {
   state.recipeParameters = { time: [...time], dietType: [...dietType] };
 };
 
-//state.filterRecipe will give filtered with time and dietType
-export const searchOptions = function (objectOptions) {
-  state.filterRecipe = state.localRecipe.filter(val => {
-    if (!objectOptions.time) return val.dietType === objectOptions.dietType;
-    else if (!objectOptions.dietType) return val.time === objectOptions.time;
-    else
-      return (
-        val.dietType === objectOptions.dietType &&
-        val.time === objectOptions.time
-      );
+export const updateFilteredRecipe = function () {
+  state.addedDiet.forEach(dietVal => {
+    state.filterRecipe = state.filterRecipe.map(val => {
+      return val.name === dietVal.name
+        ? { name: `${dietVal.name} is already added!`, status: true }
+        : val;
+    });
   });
+};
+//state.filterRecipe will give filtered with time and dietType
+export const searchOptions = function (objectOptions = null) {
+  if (objectOptions) {
+    state.filterRecipe = state.localRecipe.filter(val => {
+      if (!objectOptions.time) return val.dietType === objectOptions.dietType;
+      else if (!objectOptions.dietType) return val.time === objectOptions.time;
+      else
+        return (
+          val.dietType === objectOptions.dietType &&
+          val.time === objectOptions.time
+        );
+    });
+  }
 
   state.searchParameters = {
     description: `Showing ${
@@ -326,6 +347,112 @@ export const searchOptions = function (objectOptions) {
       objectOptions.time ? objectOptions.time : ''
     } diet`,
   };
+};
+
+export const addDiet = function (diet) {
+  if (state.addedDiet.length < ADDED_DIET_LIMIT) {
+    state.localRecipe.forEach(item => {
+      if (item.name === diet) state.addedDiet.push(item);
+    });
+  }
+};
+
+export const deleteDiet = function (id) {
+  state.addedDiet.forEach((val, idx) => {
+    if (val.id === +id) state.addedDiet.splice(idx, 1);
+  });
+  console.log(state.addedDiet);
+};
+
+export const findDietStatistics = function () {
+  const a = state.addedDiet.reduce(
+    (acc, val) => {
+      acc.totalCalories += val.calories;
+      return acc;
+    },
+    {
+      totalCalories: 0,
+      totalEnergy: 0,
+      weeklyCalories: 0,
+      weightGain: 0,
+    }
+  );
+};
+
+//directly gets the data in model instead views
+export const localStorageUser = function () {
+  try {
+    if (state.personalDetails) return;
+
+    const [name, height, age] = [
+      prompt('Please Enter Your Name'),
+      prompt('Please Enter your Height in cm'),
+      prompt('Please Enter your Age'),
+    ];
+
+    if (!name || name.trim().length === 0)
+      throw new Error('Name cannot be empty.');
+    if (!height || isNaN(height) || +height <= 0)
+      throw new Error('Height must be a valid positive number.');
+    if (!age || isNaN(age) || +age <= 0)
+      throw new Error('Age must be a valid positive number.');
+
+    state.personalDetails = {
+      name: name.trim(),
+      height: +height,
+      age: +age,
+    };
+
+    const [weight, dailyCalories] = [
+      prompt(
+        `${state.personalDetails.name}, Please Enter your current Weight in kg`
+      ),
+      prompt(
+        `${state.personalDetails.name}, Please Enter how much calorie you burn (e.g. 2000 kcal)`
+      ),
+    ];
+
+    if (!weight || isNaN(weight) || +weight <= 0)
+      throw new Error('Weight must be a valid positive number.');
+    if (!dailyCalories || isNaN(dailyCalories) || +dailyCalories <= 0)
+      throw new Error('Daily calorie intake must be a valid positive number.');
+
+    state.personalDetails.weight = +weight;
+    state.personalDetails.dailyCalories = +dailyCalories;
+
+    localStorage.setItem('user', JSON.stringify(state.personalDetails));
+    console.log('✅ Personal Details Saved:', state.personalDetails);
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const getWeightProjectionData = function () {
+  const { weight, height, dailyCalories } = state.personalDetails;
+  const calorieIntake = state.addedDiet.reduce(
+    (acc, val) => acc + val.calories,
+    0
+  );
+
+  const bmi = weight / (height / 100) ** 2;
+  const calorieGap = calorieIntake - dailyCalories;
+  const monthlyChange = (calorieGap * 30) / 7700;
+
+  const weights = [];
+  for (let i = 1; i <= 12; i++) {
+    const newWeight = weight + monthlyChange * i;
+    weights.push(+newWeight.toFixed(2));
+  }
+
+  state.dietSummary = {
+    calorieGap: +calorieGap.toFixed(2),
+    monthlyChange: +monthlyChange.toFixed(2),
+    weights,
+    bmi: +bmi.toFixed(2),
+    totalCalories: +calorieIntake,
+  };
+
+  console.log(state.dietSummary);
 };
 
 /*
@@ -339,5 +466,8 @@ time: Snack, Lunch/Dinner, Dessert, Side/Snack, Side, Breakfast/Lunch, drink,
 const init = function () {
   const storage = JSON.parse(localStorage.getItem('ForkifyRecipeBookmarks'));
   if (storage) state.bookmarks = storage;
+
+  const userDetails = JSON.parse(localStorage.getItem('user'));
+  if (userDetails) state.personalDetails = userDetails;
 };
 init();
