@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+// import '../node_modules/core-js'
 import * as data from './model';
 import { recipeView } from './views/recipeView';
 import { searchView } from './views/searchView';
