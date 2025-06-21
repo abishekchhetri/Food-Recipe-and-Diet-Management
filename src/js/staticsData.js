@@ -30,9 +30,6 @@ export const DOUGHNUT_DATA = function (data) {
 };
 
 export const LINE_GRAPH = function (data) {
-  //data has all data.state
-  console.log(data);
-
   const labels = [
     'Baisakh',
     'Jesha',

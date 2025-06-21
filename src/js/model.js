@@ -451,8 +451,6 @@ export const getWeightProjectionData = function () {
     bmi: +bmi.toFixed(2),
     totalCalories: +calorieIntake,
   };
-
-  console.log(state.dietSummary);
 };
 
 /*
