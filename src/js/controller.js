@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import * as data from './model';
 import { recipeView } from './views/recipeView';
