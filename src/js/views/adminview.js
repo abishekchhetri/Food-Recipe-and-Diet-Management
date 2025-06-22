@@ -1,6 +1,7 @@
 import { View } from './view.js';
 import { AUTH } from '../config.js';
 class RecipeView extends View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   isRendered = false;
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error loading recipe!';

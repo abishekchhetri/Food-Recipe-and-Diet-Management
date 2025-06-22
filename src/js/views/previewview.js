@@ -1,6 +1,6 @@
 import { View } from './view.js';
-import icons from 'url:../../../css/sprite.svg';
 class PreviewView extends View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   _parentEl = '';
   _generateMarkup() {
     return `
@@ -19,7 +19,7 @@ class PreviewView extends View {
         <p class="preview__publisher">${val.publisher}</p>
       <div class="preview__user-generated ${!val.key ? 'hidden' : ''}">
           <svg class = "svg__small">
-          <use href="${icons}#icon-user"></use>
+          <use href="${this.icons}#icon-user"></use>
           </svg>
         </div>
       </div>

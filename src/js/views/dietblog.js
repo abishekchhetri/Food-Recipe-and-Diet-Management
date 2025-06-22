@@ -1,5 +1,4 @@
 import { View } from './view.js';
-
 class BlogView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error in JSON BIN, HOLD ON OR REFRESH!';

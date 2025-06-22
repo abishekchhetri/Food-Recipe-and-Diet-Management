@@ -1,5 +1,5 @@
-import icons from 'url:../../../css/sprite.svg';
 export class View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   _data;
   render(renderData = null, boolean = true) {
     this._data = renderData;
@@ -56,7 +56,7 @@ export class View {
     <p>${this._errorMessage}</p>
     </div>
      <svg>
-     <use href="${icons}#icon-sad"></use>
+     <use href="${this.icons}#icon-sad"></use>
      </svg>
   </div> `;
     this.renderComponent(html);
@@ -66,7 +66,7 @@ export class View {
     const html = `
     <div class="message">
      <svg>
-             <use href="${icons}#icon-spoon-knife"></use>
+             <use href="${this.icons}#icon-spoon-knife"></use>
                </svg>
     <p>${this._successMessage}</p> 
     </div>

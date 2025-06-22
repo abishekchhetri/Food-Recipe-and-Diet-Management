@@ -1,13 +1,13 @@
 import { View } from './view.js';
 import { Fraction } from 'fraction.js';
-import icons from 'url:../../../css/sprite.svg';
 class RecipeView extends View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error loading recipe!';
   _successMessage = 'Start by searching for recipe!';
 
   // <svg>
-  //    <use href="${icons}#icon-eye"></use>
+  //    <use href="${this.icons}#icon-eye"></use>
   //  </svg>
   _generateMarkup() {
     return `
@@ -22,7 +22,7 @@ class RecipeView extends View {
         
           <div class="recipe__info">
               <svg>
-             <use href="${icons}#icon-stopwatch"></use>
+             <use href="${this.icons}#icon-stopwatch"></use>
                </svg>
             <p class="recipe__info-data recipe__info-data--minutes">${
               this._data.cookingTime
@@ -35,13 +35,13 @@ class RecipeView extends View {
             <div class="recipe__info-buttons">
               <button class="btn--tiny btn--increase-servings">
                <svg class="svg__medium">
-            <use href="${icons}#icon-plus"></use>
+            <use href="${this.icons}#icon-plus"></use>
             </svg>
               </button>
               <span></span>
               <button class="btn--tiny btn--decrease-servings">
                <svg class="svg__medium">
-            <use href="${icons}#icon-minus"></use>
+            <use href="${this.icons}#icon-minus"></use>
             </svg>
               </button>
             </div>
@@ -53,14 +53,14 @@ class RecipeView extends View {
 
           <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
                 <svg>
-                <use href="${icons}#icon-user"></use>
+                <use href="${this.icons}#icon-user"></use>
                 </svg>
 
           </div>
 
           <button class="btn--round ${this._data.bookmark ? 'bookmarked' : ''}">
           <svg >
-          <use href="${icons}#${
+          <use href="${this.icons}#${
       this._data.bookmark ? 'icon-tag-fill' : 'icon-tag-stroke'
     }"></use>
           </svg>
@@ -98,7 +98,7 @@ class RecipeView extends View {
           <div class="direction">
             <p>Directions</p>
             <svg>
-                <use href="${icons}#icon-global"></use>
+                <use href="${this.icons}#icon-global"></use>
                 </svg>
           </div>
           </a>
@@ -108,7 +108,7 @@ class RecipeView extends View {
   _generateMarkupIngredients(val) {
     return `<li class="recipe__ingredient">
     <svg class = "svg__small">
-       <use href="${icons}#icon-checkmark"></use>
+       <use href="${this.icons}#icon-checkmark"></use>
      </svg>
 
     <p class="recipe__quantity">${
