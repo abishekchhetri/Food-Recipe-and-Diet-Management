@@ -1,7 +1,5 @@
 import { View } from './view.js';
-import { Fraction } from 'fraction.js';
-import icons from 'url:../../../css/sprite.svg';
-import { AUTH } from '../config';
+
 class RecipeView extends View {
   isRendered = false;
   _parentEl = document.querySelector('.recipe');
