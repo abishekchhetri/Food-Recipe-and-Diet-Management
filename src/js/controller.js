@@ -1,5 +1,7 @@
 // import '../node_modules/core-js'
 import * as data from './model';
+import 'regenerator-runtime';
+import 'core-js/stable';
 import { recipeView } from './views/recipeView';
 import { searchView } from './views/searchView';
 import { resultView } from './views/resultView';
