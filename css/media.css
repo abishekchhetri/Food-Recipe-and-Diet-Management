@@ -1,4 +1,10 @@
 @media (max-width: 60em) {
+  p {
+    font-size: 2rem !important;
+  }
+  span {
+    font-size: 2rem !important;
+  }
   html {
     padding: 0 !important;
     font-size: 50% !important;

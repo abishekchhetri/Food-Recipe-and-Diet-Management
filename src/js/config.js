@@ -11,7 +11,6 @@ export const BLOG_KEY = '68519b1d8561e97a5025ea4b';
 export const AUTH =
   +1234 +
   RECIPE_RENDER_TIMEOUT * FETCH_ERROR_TIMEOUT * FETCH_TIMEOUT_TIMER_SECONDS;
-console.log(AUTH);
 
 export const ADDED_DIET_LIMIT = 10;
 export const COLORS = [
