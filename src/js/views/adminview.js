@@ -1,5 +1,5 @@
 import { View } from './view.js';
-import { AUTH } from '../config';
+import { AUTH } from '../config.js';
 class RecipeView extends View {
   icons = new URL('../../../css/sprite.svg', import.meta.url);
   isRendered = false;

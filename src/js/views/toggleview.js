@@ -16,11 +16,11 @@ class toggleView extends View {
   _generateMarkup() {
     if (this._data)
       return `
-                <use href="${icons}#icon-moon-fill"></use> 
+                <use href="${this.icons}#icon-moon-fill"></use> 
     `;
     else
       return `
-                <use href="${icons}#icon-sun-stroke"></use>      
+                <use href="${this.icons}#icon-sun-stroke"></use>      
     `;
   }
 

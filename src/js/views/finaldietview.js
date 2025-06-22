@@ -1,6 +1,6 @@
 import { View } from './view.js';
-import Chart from 'chart.js/auto';
-import { DOUGHNUT_DATA, LINE_GRAPH } from '../staticsdata';
+import Chart from '../../../node_modules/chart.js/auto';
+import { DOUGHNUT_DATA, LINE_GRAPH } from '../staticsdata.js';
 
 class finalDiet extends View {
   _parentEl = document.querySelector('.recipe');

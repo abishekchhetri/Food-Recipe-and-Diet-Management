@@ -1,5 +1,5 @@
 import { View } from './view.js';
-import { ADDED_DIET_LIMIT } from '../config';
+import { ADDED_DIET_LIMIT } from '../config.js';
 
 class dietManagement extends View {
   _parentEl = document.querySelector('.recipe');
