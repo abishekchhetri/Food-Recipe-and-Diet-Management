@@ -1,5 +1,5 @@
 import { View } from './view.js';
-
+import { AUTH } from '../config.js';
 class RecipeView extends View {
   isRendered = false;
   _parentEl = document.querySelector('.recipe');

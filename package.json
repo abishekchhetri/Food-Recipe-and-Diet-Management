@@ -15,7 +15,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./",
+    "build": "parcel build index.html --no-optimize --no-scope-hoist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
