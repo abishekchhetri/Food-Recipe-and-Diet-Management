@@ -5,7 +5,7 @@ import {
   JSON_BIN,
   BLOG_KEY,
   ADDED_DIET_LIMIT,
-} from './config';
+} from './config.js';
 import { saveBookmarkLocalStorage } from './helper.js';
 import { ingredientsRight } from './helper.js';
 import { validateUploadRecipe } from './helper.js';
