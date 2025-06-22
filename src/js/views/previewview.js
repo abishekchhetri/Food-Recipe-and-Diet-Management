@@ -1,5 +1,5 @@
 import { View } from './view.js';
-import icons from 'url:../../../css/sprite.svg';
+import icons from '../../../css/sprite.svg';
 class PreviewView extends View {
   _parentEl = '';
   _generateMarkup() {

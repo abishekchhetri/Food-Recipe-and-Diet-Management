@@ -1,4 +1,4 @@
-import icons from 'url:../../../css/sprite.svg';
+import icons from '../../../css/sprite.svg';
 export class View {
   _data;
   render(renderData = null, boolean = true) {

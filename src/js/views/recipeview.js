@@ -1,6 +1,6 @@
 import { View } from './view.js';
 import { Fraction } from 'fraction.js';
-import icons from 'url:../../../css/sprite.svg';
+import icons from '../../../css/sprite.svg';
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error loading recipe!';
