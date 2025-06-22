@@ -1,8 +1,8 @@
-import { View } from './View';
+import { View } from './view';
 import { Fraction } from 'fraction.js';
 import icons from 'url:../../../css/sprite.svg';
 import Chart from 'chart.js/auto';
-import { DOUGHNUT_DATA, LINE_GRAPH } from '../staticsData';
+import { DOUGHNUT_DATA, LINE_GRAPH } from '../staticsdata';
 
 class finalDiet extends View {
   _parentEl = document.querySelector('.recipe');

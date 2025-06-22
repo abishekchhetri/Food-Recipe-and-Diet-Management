@@ -1,4 +1,4 @@
-import { View } from './View';
+import { View } from './view';
 
 class AddRecipeView extends View {
   _parentEl = document.querySelector('.upload');

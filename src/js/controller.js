@@ -2,20 +2,20 @@
 import * as data from './model';
 import 'regenerator-runtime';
 import 'core-js/stable';
-import { recipeView } from './views/recipeView';
-import { searchView } from './views/searchView';
-import { resultView } from './views/resultView';
-import { paginationView } from './views/paginationView';
-import { bookmarksView } from './views/bookmarksView';
-import { addRecipeView } from './views/addRecipeView';
+import { recipeView } from './views/recipeview';
+import { searchView } from './views/searchview';
+import { resultView } from './views/resultview';
+import { paginationView } from './views/paginationview';
+import { bookmarksView } from './views/bookmarkview';
+import { addRecipeView } from './views/addrecipeview';
 import { ADD_RECIPE_EVENT_TIMEOUT } from './config';
 import { RECIPE_RENDER_TIMEOUT } from './config';
-import { toggleFields } from './views/toggleView';
-import { blog } from './views/dietBlog';
-import { adminView } from './views/adminView';
-import { dietMgt } from './views/dietManagement';
-import { proceedDietView } from './views/finalDietView';
-import { aboutSection } from './views/aboutView';
+import { toggleFields } from './views/toggleview';
+import { blog } from './views/dietblog';
+import { adminView } from './views/adminview';
+import { dietMgt } from './views/dietmanagement';
+import { proceedDietView } from './views/finaldietview';
+import { aboutSection } from './views/aboutview';
 
 const showRecipe = async function () {
   try {

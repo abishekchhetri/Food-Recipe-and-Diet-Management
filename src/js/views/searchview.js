@@ -1,4 +1,4 @@
-import { View } from './View';
+import { View } from './view';
 class SearchView extends View {
   _parentEl = document.querySelector('.search__field');
   _button = document.querySelector('.search__btn');

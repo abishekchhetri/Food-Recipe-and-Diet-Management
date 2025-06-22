@@ -1,4 +1,4 @@
-import { View } from './View';
+import { View } from './view';
 import { Fraction } from 'fraction.js';
 import icons from 'url:../../../css/sprite.svg';
 import { AUTH } from '../config';

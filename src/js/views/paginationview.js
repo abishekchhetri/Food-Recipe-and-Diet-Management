@@ -1,4 +1,4 @@
-import { View } from './View';
+import { View } from './view';
 
 class PaginationView extends View {
   _parentEl = document.querySelector('.pagination');

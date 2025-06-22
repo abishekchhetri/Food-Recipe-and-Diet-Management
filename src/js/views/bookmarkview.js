@@ -1,5 +1,5 @@
-import { View } from './View';
-import { previewView } from './previewView';
+import { View } from './view';
+import { previewView } from './previewview';
 class BookmarkView extends View {
   _parentEl = document.querySelector('.bookmarks');
   _errorMessage = `Error getting bookmarks!`;

@@ -9,7 +9,7 @@ import {
 import { saveBookmarkLocalStorage } from './helper';
 import { ingredientsRight } from './helper';
 import { validateUploadRecipe } from './helper';
-import { commonRecipe } from './commonRecipes';
+import { commonRecipe } from './commonrecipes';
 
 export const state = {
   recipe: {},
