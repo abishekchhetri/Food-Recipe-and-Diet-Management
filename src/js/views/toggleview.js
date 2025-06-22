@@ -1,5 +1,5 @@
 //this view toggles any of the view and updates to the state array this is for increasing easiness to toggle the views
-import { View } from './view';
+import { View } from './view.js';
 import icons from 'url:../../../css/sprite.svg';
 
 class toggleView extends View {

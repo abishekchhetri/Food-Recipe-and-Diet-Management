@@ -1,21 +1,21 @@
 // import '../node_modules/core-js'
-import * as data from './model';
-// import './node_modules/regenerator-runtime';
-// import './node_modules/core-js/stable';
-import { recipeView } from './views/recipeview';
-import { searchView } from './views/searchview';
-import { resultView } from './views/resultview';
-import { paginationView } from './views/paginationview';
-import { bookmarksView } from './views/bookmarkview';
-import { addRecipeView } from './views/addrecipeview';
-import { ADD_RECIPE_EVENT_TIMEOUT } from './config';
-import { RECIPE_RENDER_TIMEOUT } from './config';
-import { toggleFields } from './views/toggleview';
-import { blog } from './views/dietblog';
-import { adminView } from './views/adminview';
-import { dietMgt } from './views/dietmanagement';
-import { proceedDietView } from './views/finaldietview';
-import { aboutSection } from './views/aboutview';
+import * as data from './model.js';
+import '../../node_modules/regenerator-runtime/runtime';
+import '../../node_modules/core-js/stable';
+import { recipeView } from './views/recipeview.js';
+import { searchView } from './views/searchview.js';
+import { resultView } from './views/resultview.js';
+import { paginationView } from './views/paginationview.js';
+import { bookmarksView } from './views/bookmarkview.js';
+import { addRecipeView } from './views/addrecipeview.js';
+import { ADD_RECIPE_EVENT_TIMEOUT } from './config.js';
+import { RECIPE_RENDER_TIMEOUT } from './config.js';
+import { toggleFields } from './views/toggleview.js';
+import { blog } from './views/dietblog.js';
+import { adminView } from './views/adminview.js';
+import { dietMgt } from './views/dietmanagement.js';
+import { proceedDietView } from './views/finaldietview.js';
+import { aboutSection } from './views/aboutview.js';
 
 const showRecipe = async function () {
   try {

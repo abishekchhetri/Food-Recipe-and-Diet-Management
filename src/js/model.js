@@ -1,4 +1,4 @@
-import { AJAX } from './helper';
+import { AJAX } from './helper.js';
 import {
   API_KEY,
   RESULT_PER_PAGE,
@@ -6,10 +6,10 @@ import {
   BLOG_KEY,
   ADDED_DIET_LIMIT,
 } from './config';
-import { saveBookmarkLocalStorage } from './helper';
-import { ingredientsRight } from './helper';
-import { validateUploadRecipe } from './helper';
-import { commonRecipe } from './commonrecipes';
+import { saveBookmarkLocalStorage } from './helper.js';
+import { ingredientsRight } from './helper.js';
+import { validateUploadRecipe } from './helper.js';
+import { commonRecipe } from './commonrecipes.js';
 
 export const state = {
   recipe: {},

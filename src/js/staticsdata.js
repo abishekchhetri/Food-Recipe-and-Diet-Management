@@ -1,5 +1,5 @@
 //this data is for the stats of all dish added based on data of user
-import { COLORS } from './config';
+import { COLORS } from './config.js';
 
 export const DOUGHNUT_DATA = function (data) {
   const dataOptions = data.addedDiet.reduce(

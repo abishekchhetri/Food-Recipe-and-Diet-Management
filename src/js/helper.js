@@ -2,7 +2,7 @@ import {
   FETCH_ERROR_TIMEOUT,
   FETCH_TIMEOUT_TIMER_SECONDS,
   JSON_BIN,
-} from './config';
+} from './config.js';
 
 const timeout = async function (seconds) {
   return new Promise((_, reject) => {

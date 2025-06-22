@@ -1,4 +1,4 @@
-import { View } from './view';
+import { View } from './view.js';
 import { ADDED_DIET_LIMIT } from '../config';
 import icons from 'url:../../../css/sprite.svg';
 import { DOUGHNUT_DATA } from '../staticsdata';

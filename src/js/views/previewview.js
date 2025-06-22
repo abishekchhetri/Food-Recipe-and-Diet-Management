@@ -1,4 +1,4 @@
-import { View } from './view';
+import { View } from './view.js';
 import icons from 'url:../../../css/sprite.svg';
 class PreviewView extends View {
   _parentEl = '';
