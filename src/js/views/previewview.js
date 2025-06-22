@@ -1,6 +1,6 @@
 import { View } from './view.js';
-import icons from 'url:../../../css/sprite.svg';
 class PreviewView extends View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   _parentEl = '';
   _generateMarkup() {
     return `

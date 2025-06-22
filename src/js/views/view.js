@@ -1,5 +1,5 @@
-import icons from 'url:../../../css/sprite.svg';
 export class View {
+  icons = new URL('../../../css/sprite.svg', import.meta.url);
   _data;
   render(renderData = null, boolean = true) {
     this._data = renderData;

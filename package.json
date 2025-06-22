@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "buffer": "^6.0.3",
-    "parcel": "^2.15.2"
+    "parcel": "^2.15.4"
   },
   "dependencies": {
     "chart.js": "^4.5.0",

@@ -1,7 +1,5 @@
 import { View } from './view.js';
-import { ADDED_DIET_LIMIT } from '../config';
-import icons from 'url:../../../css/sprite.svg';
-import { DOUGHNUT_DATA } from '../staticsdata';
+
 class aboutSectiona extends View {
   _parentEl = document.querySelector('.recipe');
   diet = document.querySelector('.click__diet');

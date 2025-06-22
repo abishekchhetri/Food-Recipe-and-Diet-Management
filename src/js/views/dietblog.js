@@ -1,6 +1,4 @@
 import { View } from './view.js';
-import { Fraction } from 'fraction.js';
-import icons from 'url:../../../css/sprite.svg';
 class BlogView extends View {
   _parentEl = document.querySelector('.recipe');
   _errorMessage = 'Error in JSON BIN, HOLD ON OR REFRESH!';
