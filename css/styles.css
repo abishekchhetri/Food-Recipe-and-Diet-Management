@@ -16,6 +16,10 @@
 .hover__nav:hover {
   color: var(--hover-color);
 }
+.hover__nav {
+  font-size: 1.3rem !important;
+}
+
 .container {
   background-color: var(--body-color);
   position: relative;
@@ -462,6 +466,7 @@
 .search__result__diet {
   height: 15rem;
   overflow-x: hidden;
+  font-size: 1.3rem;
 }
 .search__result__view {
   display: flex;
@@ -520,6 +525,11 @@ td {
   padding: 1rem 1rem;
   font-size: 1rem;
   vertical-align: top;
+}
+.added__diets {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  box-shadow: 0px 0px 11px 0px var(--box-shadow-color);
 }
 
 .diet__sublists td:first-child {

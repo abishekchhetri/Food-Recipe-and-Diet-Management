@@ -27,7 +27,7 @@ html {
 
 /* universal font format */
 p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--text-color);
 }
 a {
